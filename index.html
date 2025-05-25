@@ -12,7 +12,7 @@
   <meta property="og:description"
         content="108 VLMs × 2 220 trials reveal human-aligned congruency effects and persistent hierarchical-conflict deficits."/>
   <meta property="og:url" content="https://vlm-psychophysics.github.io/"/>
-  <meta property="og:image" content="teaser_psychophysics.png"/>
+  <meta property="og:image" content="standard_vs_squared.png"/>
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
 
@@ -20,7 +20,7 @@
         content="Machine Psychophysics: Cognitive Control in VLMs">
   <meta name="twitter:description"
         content="Emergent executive-function signatures and scaling trends across 108 VLMs.">
-  <meta name="twitter:image" content="teaser_psychophysics.png">
+  <meta name="twitter:image" content="standard_vs_squared.png">
   <meta name="twitter:card" content="summary_large_image">
 
   <meta name="keywords"
@@ -34,18 +34,14 @@
 
   <!-- 样式 & 资源 -->
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
-
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-slider@2.0.0/dist/css/bulma-slider.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/js/bulma-carousel.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bulma-slider@2.0.0/dist/js/bulma-slider.min.js"></script>
 
   <!-- MathJax -->
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
@@ -54,13 +50,14 @@
 
   <style>
     .carousel .item{display:flex;flex-direction:column;justify-content:center;align-items:center}
-    .carousel .item>img{margin:0 auto;max-height:450px;object-fit:contain}
+    .carousel .item>figure{margin:0}
+    .carousel img{max-height:450px;object-fit:contain}
     .hero-body{padding:3rem 1.5rem}
     .title.is-1{font-size:2.5rem!important}
     @media(min-width:1024px){.title.is-1{font-size:3rem!important}}
     .publication-title{margin-bottom:1rem!important}
     .author-block{margin-right:1rem}
-    .teaser-img{max-width:100%;height:auto;border-radius:10px;box-shadow:0 4px 8px rgba(0,0,0,.1)}
+    figure figcaption{margin-top:6px;font-size:.8rem;color:#666}
   </style>
 </head>
 <body>
@@ -77,23 +74,23 @@
             </h1>
           </div>
           <h4 class="title is-size-4 publication-title" style="color:red;">
-            NeurIPS 2025<span style="font-weight:normal;font-style:italic;"> (Submitted)</span>
+            NeurIPS&nbsp;2025<span style="font-weight:normal;font-style:italic;"> (Submitted)</span>
           </h4>
 
           <!-- Authors -->
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><a href="#" target="_blank">Dezhi Luo</a><sup>1</sup>,</span>
-            <span class="author-block"><a href="#" target="_blank">Maijunxian Wang</a><sup>2</sup>,</span>
-            <span class="author-block"><a href="#" target="_blank">Bingyang Wang</a><sup>3</sup>,</span>
-            <span class="author-block"><a href="#" target="_blank">Tianwei Zhao</a><sup>4</sup>,</span>
-            <span class="author-block"><a href="#" target="_blank">Yijiang Li</a><sup>5</sup>,</span>
-            <span class="author-block"><a href="#" target="_blank">Hokin Deng</a><sup>6</sup></span>
+            <span class="author-block"><a href="#" target="_blank">Dezhi&nbsp;Luo</a><sup>1</sup>,</span>
+            <span class="author-block"><a href="#" target="_blank">Maijunxian&nbsp;Wang</a><sup>2</sup>,</span>
+            <span class="author-block"><a href="#" target="_blank">Bingyang&nbsp;Wang</a><sup>3</sup>,</span>
+            <span class="author-block"><a href="#" target="_blank">Tianwei&nbsp;Zhao</a><sup>4</sup>,</span>
+            <span class="author-block"><a href="#" target="_blank">Yijiang&nbsp;Li</a><sup>5</sup>,</span>
+            <span class="author-block"><a href="#" target="_blank">Hokin&nbsp;Deng</a><sup>6</sup></span>
           </div>
 
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <sup>1</sup>Michigan,
-              <sup>2</sup>UC Davis,
+              <sup>2</sup>UC&nbsp;Davis,
               <sup>3</sup>Emory,
               <sup>4</sup>JHU,<br>
               <sup>5</sup>UCSD,
@@ -151,8 +148,8 @@
     <div class="notification is-primary is-light" style="font-size:1.1rem;">
       <strong>TL;DR&nbsp;</strong>
       108 Vision–Language Models reproduce classic congruency effects on Stroop &amp; Flanker tasks,
-      but their accuracy collapses on hierarchical “Squared” variants — revealing that robust
-      executive control has not yet scaled with model size.
+      yet collapse on hierarchical “Squared” conflicts — revealing that robust executive control
+      has not yet scaled with model size.
     </div>
   </div>
 </section>
@@ -165,15 +162,10 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-
-          <p><strong>Cognitive control</strong> refers to the ability to flexibly coordinate thought and action.  Conflict-task paradigms benchmark this faculty by contrasting congruent and incongruent trials.</p>
-
-          <p>We conduct the first <strong>large-scale psychophysics evaluation</strong> of Vision–Language Models, testing <strong>108 models</strong> on Stroop, Letter- and Number-Flanker tasks plus their more demanding “<em>Squared</em>” variants—<strong>2 220 trials</strong> each.</p>
-
-          <p>Models show human-like congruency patterns, yet collapse when conflicts are hierarchical.  Accuracy grows monotonically with parameter count, echoing resource-limited curves in human forced-response studies.</p>
-
+          <p><strong>Cognitive control</strong> refers to the ability to flexibly coordinate thought and action. Conflict-task paradigms benchmark this faculty by contrasting congruent and incongruent trials.</p>
+          <p>We conduct the first <strong>large-scale psychophysics evaluation</strong> of Vision–Language Models, testing <strong>108 models</strong> on Stroop, Letter- and Number-Flanker tasks plus their more demanding “<em>Squared</em>” variants — <strong>2 220 trials</strong> each.</p>
+          <p>Models show human-like congruency patterns, yet collapse when conflicts are hierarchical. Accuracy grows monotonically with parameter count, echoing resource-limited curves in human forced-response studies.</p>
           <p>The benchmark demonstrates that executive-function signatures can emerge from general-purpose learning at scale while revealing clear gaps for future research.</p>
-
         </div>
       </div>
     </div>
@@ -194,21 +186,18 @@
             <p>All models reproduce the classic congruency effect, indicating interference resolution emerges from multimodal pre-training.</p>
           </div>
         </div>
-
         <div class="column is-half">
           <div class="box" style="height:100%;background:linear-gradient(135deg,#ffecd2 0%,#fcb69f 100%);">
             <h3 class="title is-4"><i class="fas fa-layer-group"></i> Hierarchical Interference</h3>
             <p>Squared tasks introduce nested conflicts still unsolved by top-tier systems.</p>
           </div>
         </div>
-
         <div class="column is-half">
           <div class="box" style="height:100%;background:linear-gradient(135deg,#a8edea 0%,#fed6e3 100%);">
             <h3 class="title is-4"><i class="fas fa-chart-line"></i> Scaling Trend</h3>
             <p>Performance rises monotonically from ~1 B to 110 B parameters, paralleling human processing-time curves.</p>
           </div>
         </div>
-
         <div class="column is-half">
           <div class="box" style="height:100%;background:linear-gradient(135deg,#ff9a9e 0%,#fecfef 100%);">
             <h3 class="title is-4"><i class="fas fa-check-double"></i> Convergent Validity</h3>
@@ -231,40 +220,35 @@
 
         <!-- Standard tasks -->
         <div class="item">
-          <div style="text-align:center;">
-            <img src="figure1.png" alt="Standard tasks" style="max-width:90%;">
-            <h3 class="subtitle has-text-centered" style="font-size:1rem;margin-top:10px;">
-              <strong>Standard Tasks</strong> – congruent vs incongruent Stroop & Flanker stimuli.
-            </h3>
-          </div>
+          <figure>
+            <img src="figure1.png" alt="Standard tasks">
+            <figcaption><strong>Standard Tasks.</strong> Congruent vs. incongruent Stroop &amp; Flanker stimuli.</figcaption>
+          </figure>
         </div>
 
         <!-- Squared tasks -->
         <div class="item">
-          <div style="text-align:center;">
-            <img src="figure2.png" alt="Squared tasks" style="max-width:90%;">
-            <h3 class="subtitle has-text-centered" style="font-size:1rem;margin-top:10px;">
-              <strong>Squared Tasks</strong> – hierarchical conflict (FC / FI / SCRI / SIRC).
-            </h3>
-          </div>
+          <figure>
+            <img src="figure2.png" alt="Squared tasks">
+            <figcaption><strong>Squared Tasks.</strong> Four hierarchical conflict conditions (FC / FI / SCRI / SIRC).</figcaption>
+          </figure>
         </div>
 
         <!-- Control battery -->
         <div class="item">
-          <div style="text-align:center;">
-            <img src="control_tasks.png" alt="Control tasks" style="max-width:90%;">
-            <h3 class="subtitle has-text-centered" style="font-size:1rem;margin-top:10px;">
-              <strong>Control Battery</strong> – isolates OCR, color, and spatial cues.
-            </h3>
-          </div>
+          <figure>
+            <img src="control_tasks.png" alt="Control tasks">
+            <figcaption><strong>Control Battery.</strong> Isolates OCR, color perception, spatial encoding.</figcaption>
+          </figure>
         </div>
+
       </div>
     </div>
   </div>
 </section>
 <!-- ===== /Experimental Design Carousel ===== -->
 
-<!-- ===== Results (summary + figures) ===== -->
+<!-- ===== Results ===== -->
 <section class="section">
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered">📊 Results</h2>
@@ -279,16 +263,17 @@
       </ul>
 
       <!-- Main accuracy figure -->
-      <div class="has-text-centered" style="margin:2rem 0;">
+      <figure style="text-align:center;margin:2rem 0;">
         <img src="standard_vs_squared.png" alt="Main accuracy results" style="max-width:95%;">
-        <p class="is-size-7" style="color:#666;margin-top:6px;">Accuracy across conflict conditions.</p>
-      </div>
+        <figcaption><strong>Overall Results.</strong> Human-model accuracy across conflict conditions.</figcaption>
+      </figure>
 
       <!-- Scaling curve -->
       <h4 class="title is-5">Scaling with parameters</h4>
-      <div class="has-text-centered">
+      <figure style="text-align:center;">
         <img src="scaling.png" alt="Scaling curve" style="max-width:90%;">
-      </div>
+        <figcaption><strong>Scaling Trend.</strong> Accuracy vs. parameter count (1 B → 110 B).</figcaption>
+      </figure>
 
     </div>
   </div>
@@ -301,17 +286,13 @@
     <h2 class="title is-3 has-text-centered">💡 Implications & Future Work</h2>
 
     <div class="columns is-multiline">
-
       <div class="column is-half">
         <div class="box" style="border-left:4px solid #ff6b6b;">
-          <h3 class="title is-4">
-            <i class="fas fa-exclamation-triangle" style="color:#ff6b6b;"></i>
-            Open Challenges
-          </h3>
+          <h3 class="title is-4"><i class="fas fa-exclamation-triangle" style="color:#ff6b6b;"></i> Open Challenges</h3>
           <ul>
             <li>Robust resolution of multi-level conflicts.</li>
             <li>Generalisation to unseen layouts.</li>
-            <li>Efficiency—control gains scale slowly with parameters.</li>
+            <li>Efficiency — control gains scale slowly with parameters.</li>
             <li>Interpretability of internal gating.</li>
           </ul>
         </div>
@@ -319,13 +300,10 @@
 
       <div class="column is-half">
         <div class="box" style="border-left:4px solid #48c774;">
-          <h3 class="title is-4">
-            <i class="fas fa-lightbulb" style="color:#ffdd57;"></i>
-            Research Directions
-          </h3>
+          <h3 class="title is-4"><i class="fas fa-lightbulb" style="color:#ffdd57;"></i> Research Directions</h3>
           <ul>
             <li>Add <em>control heads</em> / PFC-style routing.</li>
-            <li>Conflict-aware curricula & delayed-reward RL.</li>
+            <li>Conflict-aware curricula &amp; delayed-reward RL.</li>
             <li>Synthetic psychophysics corpora at scale.</li>
             <li>Forced-response benchmarks linking params → PT.</li>
           </ul>
@@ -336,11 +314,11 @@
         <div class="box" style="background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:white;">
           <h3 class="title is-4" style="color:white;"><i class="fas fa-bullseye"></i> Toward Executive-Aware Models</h3>
           <p style="font-size:1.1rem;">
-            Our benchmark shows that today’s VLMs master perception yet still struggle with self-regulation. We release tasks, code, and scoring tools to spur progress on dynamic cognitive-control diagnostics.
+            Our benchmark shows that today’s VLMs master perception yet still struggle with self-regulation.
+            We release tasks, code, and scoring tools to spur progress on dynamic cognitive-control diagnostics.
           </p>
         </div>
       </div>
-
     </div>
   </div>
 </section>
