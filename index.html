@@ -2,115 +2,94 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="description" content="Machine Psychophysics: Cognitive Control in Vision–Language Models" />
-  <meta name="keywords" content="Cognitive Control, Vision-Language Models, VLM, Psychophysics, AI, Executive Function" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Machine Psychophysics</title>
+  <title>Machine Psychophysics: Cognitive Control in Vision–Language Models</title>
 
+  <!-- 字体与样式 -->
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet" />
-  <link rel="stylesheet" href="./static/css/bulma.min.css" />
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css" />
-  <link rel="stylesheet" href="./static/css/index.css" />
-  <link rel="icon" href="./static/images/favicon.svg" />
+  <link rel="stylesheet" href="index.css" />
+
+  <!-- Favicon（可自定义） -->
+  <link rel="icon" href="favicon.svg" />
 </head>
-
 <body>
-<section class="hero">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Machine Psychophysics</h1>
-          <h1 class="title is-3 publication-title">Cognitive Control in Vision–Language Models</h1>
-          <div class="is-size-5 publication-authors">
-            <p>Dezhi Luo<sup>1</sup>, Maijunxian Wang<sup>2</sup>, Bingyang Wang<sup>3*</sup>, Tianwei Zhao<sup>4*</sup>, Yijiang Li<sup>5</sup>, Hokin Deng<sup>6</sup></p>
-            <p class="is-size-6">
-              <sup>1</sup>UMich/UCL, <sup>2</sup>UC Davis, <sup>3</sup>Emory, <sup>4</sup>Johns Hopkins, <sup>5</sup>UCSD, <sup>6</sup>CMU
-            </p>
-          </div>
-          <div class="publication-links mt-4">
-            <a href="./static/pdf/psychophysics_paper.pdf" class="external-link button is-normal is-rounded is-dark">
-              <span class="icon"><i class="fas fa-file-pdf"></i></span><span>Paper</span>
-            </a>
-            <a href="https://github.com/YOUR_REPO" class="external-link button is-normal is-rounded is-dark">
-              <span class="icon"><i class="fab fa-github"></i></span><span>Code</span>
-            </a>
-            <a href="#bibtex" class="external-link button is-normal is-rounded is-dark">
-              <span class="icon"><i class="fas fa-quote-right"></i></span><span>BibTeX</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body has-text-centered">
-      <img src="./figure1.png" class="cccenter" alt="Teaser image">
-      <h2 class="subtitle">
-        Evaluating cognitive control in VLMs using classic and squared conflict tasks. Tasks involve Stroop, Flanker, control variants, and scaling analysis.
-      </h2>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container is-max-desktop has-text-centered">
-    <h2 class="title is-3">Standard vs. Squared Tasks</h2>
-    <img src="./figure1.png" class="cccenter" alt="Standard Tasks">
-    <p>Stroop and Flanker standard task examples.</p>
-    <img src="./figure2.png" class="cccenter" alt="Squared Tasks">
-    <p>Squared variants with hierarchical interference.</p>
-    <img src="./standard_vs_squared.png" class="cccenter" alt="Standard vs Squared Chart">
-  </div>
-</section>
-
-<section class="section">
-  <div class="container is-max-desktop has-text-centered">
-    <h2 class="title is-3">Control Tasks</h2>
-    <img src="./control_tasks.png" class="cccenter" alt="Control Tasks">
-    <p>Control conditions isolating OCR, color perception, and spatial attention.</p>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container is-max-desktop has-text-centered">
-    <h2 class="title is-3">Scaling Analysis</h2>
-    <img src="./scaling.png" class="cccenter" alt="Scaling Chart">
-    <p>Congruency effects and model behavior under increasing parameter scale.</p>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container is-max-desktop has-text-centered">
-    <h2 class="title is-3">Acknowledgments</h2>
+  <!-- Header -->
+  <header>
+    <h1>Machine Psychophysics</h1>
+    <h2>Cognitive Control in Vision–Language Models</h2>
     <p>
-      We thank Han Zhang, Jacob Sellers, and Sarah Liberatore for their comments. Thanks to <a href="https://zillion.network">Zillion Network Inc.</a> for compute support.
+      Dezhi Luo<sup>1</sup>, Maijunxian Wang<sup>2</sup>, Bingyang Wang<sup>3*</sup>,<br>
+      Tianwei Zhao<sup>4*</sup>, Yijiang Li<sup>5</sup>, Hokin Deng<sup>6</sup>
     </p>
-  </div>
-</section>
+    <p>
+      <sup>1</sup>UMich/UCL, <sup>2</sup>UC Davis, <sup>3</sup>Emory,<br>
+      <sup>4</sup>Johns Hopkins, <sup>5</sup>UCSD, <sup>6</sup>CMU
+    </p>
+    <p>
+      <a href="psychophysics_paper.pdf">📄 Paper</a> |
+      <a href="https://github.com/YOUR_REPO">💻 Code</a> |
+      <a href="#bibtex">📚 BibTeX</a>
+    </p>
+  </header>
 
-<section class="section" id="bibtex">
-  <div class="container is-max-desktop content has-text-centered">
-    <h2 class="title is-3">BibTeX</h2>
-    <pre><code>@inproceedings{{wang2025psychophysics,
-  title={{Machine Psychophysics: Cognitive Control in Vision-Language Models}},
-  author={{Luo, Dezhi and Wang, Maijunxian and Wang, Bingyang and Zhao, Tianwei and Li, Yijiang and Deng, Hokin}},
-  booktitle={{NeurIPS}},
-  year={{2025}}
-}}</code></pre>
-  </div>
-</section>
+  <!-- Abstract -->
+  <section class="section">
+    <h2>Abstract</h2>
+    <p>
+      Cognitive control refers to the ability to flexibly coordinate thought and action in pursuit of internal goals.
+      A standard method for assessing cognitive control involves conflict tasks that contrast congruent and incongruent trials,
+      measuring the ability to prioritize relevant information while suppressing interference. We evaluate 108 vision-language models
+      on three classic conflict tasks and their more demanding “squared” variants across 2,220 trials.
+      Model performance corresponds closely to human behavior under resource constraints and reveals individual differences.
+      These results indicate that some form of human-like executive function has emerged in current multi-modal foundation models.
+    </p>
+  </section>
 
-<footer class="footer">
-  <div class="container">
-    <div class="content has-text-centered">
-      <p>Adapted from MQT-LLaVA site template | Made with ❤️ by the authors</p>
-    </div>
-  </div>
-</footer>
+  <!-- Figures -->
+  <section class="section">
+    <h2>Standard vs. Squared Tasks</h2>
+    <img src="figure1.png" alt="Standard Task" />
+    <p>Figure: Stroop and Flanker task examples (congruent vs. incongruent).</p>
+    <img src="figure2.png" alt="Squared Task" />
+    <p>Figure: Squared conflict variants introducing layered interference.</p>
+    <img src="standard_vs_squared.png" alt="Condition Performance Comparison" />
+    <p>Figure: Comparison across Fully Congruent, Incongruent, SCRI, SIRC conditions.</p>
+  </section>
+
+  <section class="section">
+    <h2>Control Task Design</h2>
+    <img src="control_tasks.png" alt="Control Task Diagram" />
+    <p>
+      Control tasks isolate OCR, color recognition, and spatial attention. Results show models perform near-ceiling under control,
+      confirming interference effects stem from representational conflict.
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>Scaling Analysis</h2>
+    <img src="scaling.png" alt="Scaling Effect Plot" />
+    <p>
+      As model size increases, accuracy on incongruent and squared trials improves.
+      Larger models exhibit reduced conflict sensitivity, reflecting emergence of cognitive control mechanisms.
+    </p>
+  </section>
+
+  <!-- BibTeX -->
+  <section class="section" id="bibtex">
+    <h2>BibTeX</h2>
+    <pre><code>@inproceedings{wang2025psychophysics,
+  title={Machine Psychophysics: Cognitive Control in Vision-Language Models},
+  author={Luo, Dezhi and Wang, Maijunxian and Wang, Bingyang and Zhao, Tianwei and Li, Yijiang and Deng, Hokin},
+  booktitle={NeurIPS},
+  year={2025}
+}</code></pre>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Machine Psychophysics Project | Built with ❤️ | Template adapted from MQT-LLaVA</p>
+  </footer>
 
 </body>
 </html>
