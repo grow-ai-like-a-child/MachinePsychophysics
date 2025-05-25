@@ -51,9 +51,9 @@
   </section>
 
   <section class="section">
-    <div class="container">
+    <div class="container has-text-centered">
       <h2 class="title is-3">Abstract</h2>
-      <p class="content">
+      <p>
         Cognitive control refers to the ability to flexibly coordinate thought and action in pursuit of internal goals.
         We evaluate 108 vision-language models on three classic conflict tasks and their more demanding “squared” variants across 2,220 trials.
         Model performance corresponds closely to human behavior under resource constraints and reveals individual differences.
@@ -63,27 +63,23 @@
   </section>
 
   <section class="section">
-    <div class="container">
+    <div class="container has-text-centered">
       <h2 class="title is-3">Standard vs. Squared Tasks</h2>
-      <div class="columns">
-        <div class="column">
-          <figure class="image"><img src="./figure1.png" alt="Standard Tasks"></figure>
-          <p class="has-text-centered">Figure: Stroop and Flanker tasks</p>
-        </div>
-        <div class="column">
-          <figure class="image"><img src="./figure2.png" alt="Squared Tasks"></figure>
-          <p class="has-text-centered">Figure: Squared variants with layered conflict</p>
-        </div>
-      </div>
-      <figure class="image"><img src="./standard_vs_squared.png" alt="Standard vs Squared Tasks"></figure>
+      <img src="./figure1.png" class="figure-img" alt="Standard Tasks">
+      <p><i>Stroop and Flanker tasks</i></p>
+      <br>
+      <img src="./figure2.png" class="figure-img" alt="Squared Tasks">
+      <p><i>Squared variants with layered conflict</i></p>
+      <br>
+      <img src="./standard_vs_squared.png" class="figure-img" alt="Standard vs Squared">
     </div>
   </section>
 
   <section class="section">
-    <div class="container">
+    <div class="container has-text-centered">
       <h2 class="title is-3">Control Task Design</h2>
-      <figure class="image"><img src="./control_tasks.png" alt="Control Tasks"></figure>
-      <p class="content has-text-justified">
+      <img src="./control_tasks.png" class="figure-img" alt="Control Tasks">
+      <p>
         Control tasks isolate OCR, color perception, and spatial recognition to rule out low-level deficiencies.
         All models performed at or near ceiling in these tasks, confirming that errors in the main tasks arise from representational conflict.
       </p>
@@ -91,10 +87,10 @@
   </section>
 
   <section class="section">
-    <div class="container">
+    <div class="container has-text-centered">
       <h2 class="title is-3">Scaling Analysis</h2>
-      <figure class="image"><img src="./scaling.png" alt="Scaling Results"></figure>
-      <p class="content has-text-justified">
+      <img src="./scaling.png" class="figure-img" alt="Scaling Results">
+      <p>
         Model performance across different scales reveals human-like congruency effects on classic and squared tasks.
         Small models succeed in congruent cases but fail under conflict, whereas large models resolve interference more effectively.
       </p>
@@ -102,9 +98,9 @@
   </section>
 
   <section class="section">
-    <div class="container">
+    <div class="container has-text-centered">
       <h2 class="title is-3">Key Insight</h2>
-      <p class="content has-text-justified">
+      <p>
         Our study suggests that cognitive control mechanisms—previously thought to require symbolic modeling—can emerge from scaled associative systems trained via general-purpose learning.
         This bridges the gap between symbolic cognitive architectures and neural network-based models of intelligence.
       </p>
@@ -112,17 +108,18 @@
   </section>
 
   <section class="section">
-    <div class="container">
+    <div class="container has-text-centered">
       <h2 class="title is-3">Acknowledgments</h2>
-      <p class="content">
-        We thank Han Zhang, Jacob Sellers, and Sarah Liberatore for insightful comments. Thanks to <a href="https://zillion.network">Zillion Network Inc.</a> for providing compute infrastructure.
+      <p>
+        We thank Han Zhang, Jacob Sellers, and Sarah Liberatore for insightful comments.
+        Thanks to <a href="https://zillion.network">Zillion Network Inc.</a> for providing compute infrastructure.
       </p>
     </div>
   </section>
 
   <section class="section" id="bibtex">
-    <div class="container content">
-      <h2 class="title has-text-centered">BibTeX</h2>
+    <div class="container has-text-centered">
+      <h2 class="title is-3">BibTeX</h2>
       <pre><code>@inproceedings{{wang2025psychophysics,
   title={{Machine Psychophysics: Cognitive Control in Vision-Language Models}},
   author={{Luo, Dezhi and Wang, Maijunxian and Wang, Bingyang and Zhao, Tianwei and Li, Yijiang and Deng, Hokin}},
