@@ -1,156 +1,245 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Machine Psychophysics: Cognitive Control in Vision–Language Models</title>
+  <title>Machine Psychophysics – GrowAI</title>
   <style>
     body {
       font-family: 'Arial', sans-serif;
       margin: 0;
-      padding: 2em 1em;
+      padding: 0;
       background-color: #ffffff;
       color: #111;
       line-height: 1.7;
     }
 
-    h1, h2, h3 {
+    .section {
+      padding: 3rem 1rem;
+    }
+
+    .hero {
+      background: linear-gradient(to right, #f0f4ff, #f8f9ff);
+      padding: 3rem 1rem;
       text-align: center;
-      word-break: break-word;
+    }
+
+    h1, h2, h3 {
+      font-weight: bold;
+      text-align: center;
+      margin: 0.5em auto;
     }
 
     p {
-      max-width: 720px;
+      max-width: 800px;
       margin: 1em auto;
-      text-align: justify;
       padding: 0 1em;
+      text-align: justify;
+    }
+
+    .container {
+      max-width: 1024px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    .columns {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -1rem;
+    }
+
+    .column {
+      flex: 1;
+      min-width: 280px;
+      padding: 1rem;
+    }
+
+    .box {
+      background: #f9f9f9;
+      border-radius: 6px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
     }
 
     img {
-      width: min(90%, 720px);
+      max-width: 100%;
       height: auto;
       display: block;
       margin: 2em auto;
-      border-radius: 8px;
-      box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+      border-radius: 6px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
     }
 
-    pre {
-      background-color: #f8f8f8;
-      padding: 1em;
-      border-radius: 6px;
-      max-width: 95%;
-      margin: 2em auto;
-      overflow-x: auto;
-      white-space: pre-wrap;
+    .is-light {
+      background-color: #f5f6fa;
+    }
+
+    .centered {
+      text-align: center;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 0.6em 1.2em;
+      background-color: #3273dc;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      margin: 0.5em;
     }
 
     footer {
-      margin-top: 4em;
       text-align: center;
       font-size: 0.9em;
-      color: #777;
+      color: #666;
+      padding: 2em 1em;
+      margin-top: 2em;
+      background: #f8f8f8;
     }
 
-    @media (max-width: 600px) {
-      body {
-        padding: 1em 0.5em;
-      }
-
-      h1 {
-        font-size: 1.6em;
-      }
-
-      h2 {
-        font-size: 1.3em;
-      }
-
-      img {
-        width: 100%;
+    @media screen and (max-width: 768px) {
+      .columns {
+        flex-direction: column;
       }
     }
   </style>
+
+<style>
+  .dark-mode {
+    background-color: #121212;
+    color: #f0f0f0;
+  }
+  .dark-mode .box {
+    background: #1e1e1e;
+    border: 1px solid #333;
+  }
+  .dark-mode a {
+    color: #80b3ff;
+  }
+  .dark-mode pre {
+    background: #222;
+    color: #eee;
+  }
+  .dark-toggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1000;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    background: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+</style>
+
+<script>
+  function toggleDarkMode() {
+    const body = document.body;
+    const isDark = body.classList.toggle("dark-mode");
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    if (localStorage.getItem("theme") === "dark") {
+      document.body.classList.add("dark-mode");
+    }
+  });
+</script>
 </head>
-
 <body>
+<button class="dark-toggle" onclick="toggleDarkMode()">🌗 Toggle Dark Mode</button>
 
-<h1>Machine Psychophysics</h1>
-<h2>Cognitive Control in Vision–Language Models</h2>
-
-<section class="section" id="introduction">
-  <h2>Introduction</h2>
-  <p>Human behavior is distinguished by its flexibility and goal-directedness: we can pursue novel, underspecified tasks, adapt to changing contexts, and manage competing objectives over time. At the core of these abilities lies cognitive control...</p>
-  <p>Vision-language models (VLMs) can integrate visual and textual information and have demonstrated strong performance on high-level reasoning benchmarks...</p>
+<section class="hero">
+  <h1>Machine Psychophysics</h1>
+  <h2>Cognitive Control in Vision–Language Models</h2>
+  <p class="centered">
+    <a class="button" href="psychophysics_paper.pdf">📄 Paper</a>
+    <a class="button" href="https://github.com/grow-ai-like-a-child/MachinePsychophysics">💻 Code</a>
+    <a class="button" href="#bibtex">📚 BibTeX</a>
+  </p>
 </section>
 
-<section class="section" id="related-work">
-  <h2>Related Work</h2>
-  <h3>Human Psychophysics</h3>
-  <p>Cognitive control enables the regulation of thought and action in service of internal goals, particularly in situations involving conflict, ambiguity, or distraction...</p>
-  <h3>Symbolic and Connectionist Models</h3>
-  <p>A longstanding line of research in artificial intelligence has explored how control mechanisms can be embedded within integrated models of cognition...</p>
-  <h3>Vision-language Models</h3>
-  <p>There has been no prior attempt to directly evaluate the cognitive control capacities of vision-language models (VLMs)...</p>
+
+<section class="section">
+  <div class="container">
+    <h2>Full Method & Results</h2>
+    <div class="box">
+      <h3>📐 Methodology</h3>
+      <p>We implemented classic cognitive control tasks (Stroop, Flanker) and their squared variants to assess interference resolution capabilities of 108 VLMs. Control tasks isolated perceptual abilities. All data were synthetic and standardized across conditions.</p>
+      <p>The squared tasks introduce response-level and stimulus-level incongruities. Each model saw 2,220 trials. Four conflict conditions were evaluated: Fully Congruent (FC), Fully Incongruent (FI), Stimulus-Congruent/Response-Incongruent (SCRI), and Stimulus-Incongruent/Response-Congruent (SIRC).</p>
+    </div>
+    <div class="box">
+      <h3>📈 Results Summary</h3>
+      <p>Models demonstrated human-like congruency effects on standard tasks. Squared variants increased difficulty and revealed strong model-specific differences. Model performance improved with parameter count. Larger models more reliably ignored irrelevant input features and prioritized task-relevant cues.</p>
+    </div>
+    <div class="box">
+      <h3>🧠 Discussion</h3>
+      <p>These findings suggest that cognitive control mechanisms may emerge from scaling. However, squared tasks still induce significant failures, even for top-tier models. Control limitations remain in layered interference scenarios. This has implications for building more robust AI systems capable of human-level generalization.</p>
+    </div>
+    <div class="box">
+      <h3>🔬 Conclusion</h3>
+      <p>Machine Psychophysics introduces a new way to evaluate foundational models. Our framework offers both diagnostic and theoretical insight into AI’s capacity for flexible, goal-directed processing. We hope this benchmark guides future VLM research toward more cognitively aligned systems.</p>
+    </div>
+  </div>
+</section>
+<section class="section is-light">
+  <div class="container">
+    <h2>Overview</h2>
+    <div class="columns">
+      <div class="column">
+        <div class="box">
+          <h3>🧠 Motivation</h3>
+          <p>
+            Can vision-language models (VLMs) replicate human-like cognitive control behavior? 
+            Inspired by classic psychophysics, we evaluate 108 VLMs on Stroop, Flanker, and "squared" tasks.
+          </p>
+        </div>
+      </div>
+      <div class="column">
+        <div class="box">
+          <h3>📊 Scale & Results</h3>
+          <p>
+            Our benchmark reveals robust congruency effects, scaling patterns, and model-specific differences in resolving conflict across tasks.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section class="section" id="methods">
-  <h2>Methods</h2>
-  <img src="figure1.png" alt="Stroop and Flanker Tasks">
-  <p>To evaluate cognitive control in VLMs, we adapted paradigms from experimental psychology...</p>
-  <h3>Classic Conflict Tasks</h3>
-  <p>We applied classic cognitive control tasks to evaluate models’ ability to resolve cognitive conflict...</p>
-  <h3>Squared Tasks</h3>
-  <img src="figure2.png" alt="Squared Tasks">
-  <p>In parallel, we adapted the "squared" design introduced by Burgoyne et al...</p>
-  <h3>Control Tasks</h3>
-  <img src="control_tasks.png" alt="Control Tasks">
-  <p>To identify the specific sources of interference in each conflict task, we designed a control battery...</p>
+<section class="section">
+  <div class="container">
+    <h2>Methods</h2>
+    <img src="figure1.png" alt="Stroop and Flanker Tasks">
+    <img src="figure2.png" alt="Squared Tasks">
+    <h3>Squared Tasks</h3>
+    <h2>Results</h2>
+    <img src="standard_vs_squared.png" alt="Standard vs Squared Tasks">
+    <img src="control_tasks.png" alt="Control Task Variants">
+    <h3>Control Tasks</h3>
+    <img src="scaling.png" alt="Scaling and Model Size">
+    <h3>Scaling and Model Size</h3>
+  </div>
 </section>
 
-<section class="section" id="results">
-  <h2>Results</h2>
-  <h3>Standard Tasks</h3>
-  <img src="standard_vs_squared.png" alt="Condition Comparison Chart">
-  <p>Across all standard tasks, VLMs showed robust congruency effects...</p>
-  <h3>Squared Tasks</h3>
-  <p>Squared tasks further differentiated models into at-chance performers and those exposing persistent conflict sensitivity...</p>
-  <h3>Control Tasks</h3>
-  <p>For standard control tasks—where each component process was tested in isolation—models performed at or near ceiling...</p>
-  <h3>Scaling and Resources</h3>
-  <img src="scaling.png" alt="Scaling Analysis">
-  <p>We find a strong correlation between model size and conflict resolution ability...</p>
-</section>
-
-<section class="section" id="discussion">
-  <h2>Discussion</h2>
-  <h3>Key Findings</h3>
-  <p>Our results show that VLMs exhibit human-like congruency effects. More complex squared tasks revealed robust individual differences...</p>
-  <h3>Limitations and Future Work</h3>
-  <p>Future work could extend this framework to include a broader range of conflict types...</p>
-</section>
-
-<section class="section" id="conclusion">
-  <h2>Conclusion</h2>
-  <p>We showed that model performance closely aligns with human behavior under resource constraints and reveals robust individual differences...</p>
-</section>
-
-<section class="section" id="ack">
-  <h2>Acknowledgments</h2>
-  <p>We thank Han Zhang, Jacob Sellers, and Sarah Liberatore for their insights and comments...</p>
-</section>
-
-<section class="section" id="bibtex">
-  <h2>BibTeX</h2>
-  <pre><code>@inproceedings{{wang2025psychophysics,
+<section class="section is-light">
+  <div class="container">
+    <h2 id="bibtex">BibTeX</h2>
+    <pre><code>@inproceedings{wang2025psychophysics,
   title={{Machine Psychophysics: Cognitive Control in Vision-Language Models}},
   author={{Luo, Dezhi and Wang, Maijunxian and Wang, Bingyang and Zhao, Tianwei and Li, Yijiang and Deng, Hokin}},
   booktitle={{NeurIPS}},
   year={{2025}}
-}}</code></pre>
+}</code></pre>
+  </div>
 </section>
 
 <footer>
-  &copy; 2025 GrowAI Team. Built with ❤️ and precision.
+  &copy; {year} GrowAI Team. No framework, pure HTML + mimicked Bulma.
 </footer>
 
 </body>
