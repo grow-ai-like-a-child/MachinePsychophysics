@@ -4,22 +4,20 @@
   <meta charset="utf-8" />
   <meta name="description" content="Machine Psychophysics: Cognitive Control in Vision–Language Models" />
   <meta name="keywords" content="Cognitive Control, Vision-Language Models, VLM, Psychophysics, AI, Executive Function" />
-  <meta property="og:image" content="./static/images/teaser.png" />
+  <meta property="og:image" content="./figure1.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Machine Psychophysics: Cognitive Control in Vision–Language Models</title>
 
-  <!-- Twitter card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Machine Psychophysics: Cognitive Control in VLMs" />
   <meta name="twitter:description" content="We evaluate 108 vision-language models across cognitive control tasks and reveal emergent human-like executive function." />
-  <meta name="twitter:image" content="./static/images/teaser.png" />
+  <meta name="twitter:image" content="./figure1.png" />
 
-  <!-- Styles -->
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet" />
-  <link rel="stylesheet" href="./static/css/bulma.min.css" />
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css" />
-  <link rel="stylesheet" href="./static/css/index.css" />
-  <link rel="icon" href="./static/images/favicon.svg" />
+  <link rel="stylesheet" href="./bulma.min.css" />
+  <link rel="stylesheet" href="./fontawesome.all.min.css" />
+  <link rel="stylesheet" href="./index.css" />
+  <link rel="icon" href="./favicon.svg" />
 </head>
 
 <body>
@@ -38,7 +36,7 @@
         </p>
         <br>
         <div class="buttons is-centered">
-          <a href="./static/pdf/psychophysics_paper.pdf" class="button is-dark is-rounded">
+          <a href="./psychophysics_paper.pdf" class="button is-dark is-rounded">
             <span class="icon"><i class="fas fa-file-pdf"></i></span><span>Paper</span>
           </a>
           <a href="https://github.com/YOUR_REPO" class="button is-dark is-rounded">
@@ -69,21 +67,22 @@
       <h2 class="title is-3">Standard vs. Squared Tasks</h2>
       <div class="columns">
         <div class="column">
-          <figure class="image"><img src="./static/images/figure1.png" alt="Standard Tasks"></figure>
+          <figure class="image"><img src="./figure1.png" alt="Standard Tasks"></figure>
           <p class="has-text-centered">Figure: Stroop and Flanker tasks</p>
         </div>
         <div class="column">
-          <figure class="image"><img src="./static/images/figure2.png" alt="Squared Tasks"></figure>
+          <figure class="image"><img src="./figure2.png" alt="Squared Tasks"></figure>
           <p class="has-text-centered">Figure: Squared variants with layered conflict</p>
         </div>
       </div>
+      <figure class="image"><img src="./standard_vs_squared.png" alt="Standard vs Squared Tasks"></figure>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
       <h2 class="title is-3">Control Task Design</h2>
-      <figure class="image"><img src="./static/images/control_tasks.png" alt="Control Tasks"></figure>
+      <figure class="image"><img src="./control_tasks.png" alt="Control Tasks"></figure>
       <p class="content has-text-justified">
         Control tasks isolate OCR, color perception, and spatial recognition to rule out low-level deficiencies.
         All models performed at or near ceiling in these tasks, confirming that errors in the main tasks arise from representational conflict.
@@ -94,7 +93,7 @@
   <section class="section">
     <div class="container">
       <h2 class="title is-3">Scaling Analysis</h2>
-      <figure class="image"><img src="./static/images/scaling.png" alt="Scaling Results"></figure>
+      <figure class="image"><img src="./scaling.png" alt="Scaling Results"></figure>
       <p class="content has-text-justified">
         Model performance across different scales reveals human-like congruency effects on classic and squared tasks.
         Small models succeed in congruent cases but fail under conflict, whereas large models resolve interference more effectively.
@@ -124,12 +123,12 @@
   <section class="section" id="bibtex">
     <div class="container content">
       <h2 class="title has-text-centered">BibTeX</h2>
-      <pre><code>@inproceedings{wang2025psychophysics,
-  title     = {Machine Psychophysics: Cognitive Control in Vision-Language Models},
-  author    = {Luo, Dezhi and Wang, Maijunxian and Wang, Bingyang and Zhao, Tianwei and Li, Yijiang and Deng, Hokin},
-  booktitle = {NeurIPS},
-  year      = {2025}
-}</code></pre>
+      <pre><code>@inproceedings{{wang2025psychophysics,
+  title={{Machine Psychophysics: Cognitive Control in Vision-Language Models}},
+  author={{Luo, Dezhi and Wang, Maijunxian and Wang, Bingyang and Zhao, Tianwei and Li, Yijiang and Deng, Hokin}},
+  booktitle={{NeurIPS}},
+  year={{2025}}
+}}</code></pre>
     </div>
   </section>
 
