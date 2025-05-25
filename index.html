@@ -151,6 +151,34 @@
 </script>
 </head>
 <body>
+
+<section class="hero is-light is-medium">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title is-1">🧠 Machine Psychophysics</h1>
+      <h2 class="subtitle is-4">Cognitive Control in Vision–Language Models</h2>
+      <p class="has-text-grey">NeurIPS 2025 (Submitted) · GrowAI Team</p>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <h2 class="title is-3 has-text-centered">📝 Abstract</h2>
+      <p class="has-text-grey">
+        Cognitive control refers to the ability to flexibly coordinate thought and action in pursuit of internal goals. 
+        A standard method for assessing cognitive control involves conflict tasks that contrast congruent and incongruent trials,
+        measuring the ability to prioritize relevant information while suppressing interference. We evaluate 108 vision-language models
+        on three classic conflict tasks and their more demanding "squared" variants across 2,220 trials. Model performance corresponds
+        closely to human behavior under resource constraints and reveals individual differences. These results indicate that some form
+        of human-like executive function has emerged in current multi-modal foundational models.
+      </p>
+    </div>
+  </div>
+</section>
+
 <button class="dark-toggle" onclick="toggleDarkMode()">🌗 Toggle Dark Mode</button>
 
 <section class="hero">
@@ -249,6 +277,16 @@
     
     <div class="box">
       <img src="scaling.png" alt="Scaling Effects on Cognitive Control Tasks">
+
+<div class="box" style="background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);">
+  <h3 class="subtitle is-5 has-text-centered">⚖️ Forced-Response vs. Scaling</h3>
+  <p class="has-text-grey">
+    Human reaction time (RT) is a proxy for cognitive resources. By analogy, model parameter count serves as a proxy for processing capacity. 
+    This figure mirrors forced-response psychophysics: small models behave like low-RT humans, failing under interference; large models resemble
+    well-resourced participants. Cognitive control seems to scale with capacity.
+  </p>
+</div>
+
       <h3 class="subtitle is-5 has-text-centered">📈 Model Scaling vs Performance</h3>
       <p class="has-text-grey">Larger models like GPT-4V and Claude-3 outperformed smaller ones on incongruent and squared tasks, showing an emergent ability to suppress irrelevant inputs—suggesting control can arise from scale.</p>
     </div>
