@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Machine Psychophysics: Full Web Version</title>
+  <title>Machine Psychophysics: Cognitive Control in VLMs</title>
   <style>
     body {
       font-family: 'Arial', sans-serif;
@@ -59,73 +58,74 @@
 
 <section class="section" id="introduction">
   <h2>Introduction</h2>
-  <p>Human behavior is distinguished by its flexibility and goal-directedness: we can pursue novel, underspecified tasks, adapt to changing contexts, and manage competing objectives over time. At the core of these abilities lies cognitive control, a set of mechanisms that support the dynamic coordination of thought and action in service of internal goals, making it a particularly valuable target for evaluating signatures and guiding the development of prospective general intelligence in artificial systems.</p>
-  <p>Vision-language models (VLMs) can integrate visual and textual information and have demonstrated strong performance on high-level reasoning benchmarks. Here, we evaluate 108 models on three classic conflict tasks, along with their more cognitively demanding "squared" versions, in a large-scale, strictly controlled setting spanning 2,220 trials. Model performance corresponds remarkably to human behavior under limited computational resources and reveals robust individual differences. This finding provides substantial support for the possibility that cognitive control can emerge from scaling general-purpose associative learning systems.</p>
+  <p>Human behavior is distinguished by its flexibility and goal-directedness: we can pursue novel, underspecified tasks, adapt to changing contexts, and manage competing objectives over time. At the core of these abilities lies cognitive control...</p>
+  <p>Vision-language models (VLMs) can integrate visual and textual information and have demonstrated strong performance on high-level reasoning benchmarks...</p>
 </section>
 
 <section class="section" id="related-work">
   <h2>Related Work</h2>
   <h3>Human Psychophysics</h3>
-  <p>Cognitive control enables the regulation of thought and action in service of internal goals, particularly in situations involving conflict, ambiguity, or distraction. Conflict tasks are widely used to probe these mechanisms, with behavioral measures such as reaction time and error rates serving as proxies for internal computational demands. Slower responses and increased errors typically reflect the effort required to resolve interference between competing inputs or to update internal representations under changing task conditions. Control operates by coordinating the flow of information through a limited-capacity system, selecting which sensory cues, contextual signals, and goals are actively maintained in working memory and determining when these representations should be updated or suppressed. When overlapping sources of information are not well separated—such as when conflicting features map to different responses—interference arises and performance suffers. Control mitigates this by modulating representational strength and prioritization, allowing goal-relevant information to guide behavior efficiently. Cognitive control thereby serves as a core infrastructure for solving problems under constraints of time, uncertainty, and limited resources. Developing unified frameworks that account for these regulatory processes is a central aim of the cognitive science of intelligence, and an important guide for the design of general-purpose artificial agents.</p>
+  <p>Cognitive control enables the regulation of thought and action in service of internal goals, particularly in situations involving conflict, ambiguity, or distraction...</p>
   <h3>Symbolic and Connectionist Models</h3>
-  <p>A longstanding line of research in artificial intelligence has explored how control mechanisms can be embedded within integrated models of cognition. Prior to the rise of large-scale data-driven methods, general intelligence was often approached through symbolic and hybrid systems that explicitly specified internal structures for perception, memory, learning, and action selection—commonly known as cognitive architectures. Within these frameworks, cognitive control plays a central role in coordinating competing demands, prioritizing goals, and guiding adaptive behavior across tasks. Across a wide range of implementations, cognitive control consistently emerges as a core functional requirement for general-purpose intelligence. Architectures such as Soar and ACT-R offer contrasting yet complementary realizations of this faculty: Soar emphasizes hierarchical goal management and recursive subgoaling to resolve impasses, while ACT-R employs production rules governed by sub-symbolic utility-based conflict resolution. Despite their differences, both reflect a shared commitment to modeling the internal regulation required for flexible, multi-context behavior. However, these architectures, built on human-designed knowledge and representations, often struggle to scale and generalize compared to those that rely on general-purpose learning and search algorithms leveraging computational resources.</p>
+  <p>A longstanding line of research in artificial intelligence has explored how control mechanisms can be embedded within integrated models of cognition...</p>
   <h3>Vision-language Models</h3>
-  <p>There has been no prior attempt to directly evaluate the cognitive control capacities of vision-language models (VLMs). However, these models have demonstrated near-human performance across a wide range of complex tasks involving perception and reasoning, including spatial reasoning, Optical Character Recognition (OCR), and scene understanding—all of which serve as functional precursors to tasks requiring flexible cognitive control. And their unprecedented success has been fundamentally driven by large-scale pretraining on web-scale multimodal data and advances in cross-modal alignment, enabled by high-capacity neural architectures optimized through general-purpose learning objectives. Given these capabilities, it is fair to say that VLMs have emerged as the most promising class of artificial systems for probing the emergence of cognitive control from a scalable paradigm of intelligence. In this paper, we aim to bridge this gap.</p>
+  <p>There has been no prior attempt to directly evaluate the cognitive control capacities of vision-language models (VLMs)...</p>
 </section>
-
-<!-- 其他部分内容将在下一步追加并保存为完整 HTML 文件 -->
 
 <section class="section" id="methods">
   <h2>Methods</h2>
-  <p>To evaluate cognitive control in VLMs, we adapted paradigms from experimental psychology that are known to elicit cognitive conflict. A standard approach involves contrasting model performance on congruent versus incongruent trials, where irrelevant stimulus features must be ignored in favor of task-relevant cues. The resulting congruency effect—typically measured as reduced accuracy or increased reaction time on incongruent trials—serves as a key behavioral marker of interference resolution and ...
+  <img src="figure1.png" alt="Stroop and Flanker Tasks">
+  <p>To evaluate cognitive control in VLMs, we adapted paradigms from experimental psychology...</p>
   <h3>Classic Conflict Tasks</h3>
-  <p>We applied classic cognitive control tasks to evaluate models’ ability to resolve cognitive conflict. Specifically, we implemented the Stroop task and both the Letter and Number versions of the Flanker task. Each task followed a standard conflict paradigm in which participants must respond to task-relevant features while ignoring distracting or conflicting information.</p>
-  <p>For the Stroop task, we selected 7 commonly identifiable colors and generated 84 stimuli: 42 congruent (C) and 42 incongruent (I) trials. For the Flanker tasks, we used all 10 single-digit Arabic numerals and 10 randomly selected letters from the English alphabet, producing 180 stimuli for each task (90 congruent, 90 incongruent). All stimuli were presented in a binary forced-choice format with counterbalanced response options.</p>
+  <p>We applied classic cognitive control tasks to evaluate models’ ability to resolve cognitive conflict...</p>
   <h3>Squared Tasks</h3>
-  <p>In parallel, we adapted the "squared" design introduced by Burgoyne et al. across all three task types. This design introduces an additional layer of hierarchical conflict by requiring responses that are congruent or incongruent with the target along multiple dimensions, extending beyond the single-axis conflict of the standard versions.</p>
-  <p>For the squared versions, each task included four distinct conditions: fully congruent (FC), fully incongruent (FI), stimulus-congruent/response-incongruent (SCRI), and stimulus-incongruent/response-congruent (SIRC). The Stroop task yielded 336 stimuli (84 per condition), and each Flanker task produced 720 stimuli (180 per condition). These were likewise paired with task-specific prompts and counterbalanced response options.</p>
+  <img src="figure2.png" alt="Squared Tasks">
+  <p>In parallel, we adapted the "squared" design introduced by Burgoyne et al...</p>
   <h3>Control Tasks</h3>
-  <p>To identify the specific sources of interference in each conflict task, we designed a control battery that systematically disentangled underlying perceptual and spatial demands. Each component process (OCR, color perception, and 2D spatial recognition) was tested in isolation using minimal displays. Together, these control tasks produced 238 unique trials. All stimuli were matched in format—using consistent fonts, spatial layouts, and color palettes—ensuring that observed performance impairments ...
+  <img src="control_tasks.png" alt="Control Tasks">
+  <p>To identify the specific sources of interference in each conflict task, we designed a control battery...</p>
 </section>
 
 <section class="section" id="results">
   <h2>Results</h2>
   <h3>Standard Tasks</h3>
-  <p>Across all standard tasks, VLMs showed robust congruency effects, with significantly higher accuracy on congruent than incongruent trials. These results confirm that models reliably distinguished between congruent and conflicting stimuli, and that control demands reliably impacted performance. Moreover, robust individual differences emerged across all tasks.</p>
+  <img src="standard_vs_squared.png" alt="Condition Comparison Chart">
+  <p>Across all standard tasks, VLMs showed robust congruency effects...</p>
   <h3>Squared Tasks</h3>
-  <p>Squared tasks further differentiated models into at-chance performers and those exposing persistent conflict sensitivity—particularly high-performing models like GPT-4o, which resolved standard conflicts but remained vulnerable under hierarchical interference.</p>
+  <p>Squared tasks further differentiated models into at-chance performers and those exposing persistent conflict sensitivity...</p>
   <h3>Control Tasks</h3>
-  <p>For standard control tasks—where each component process was tested in isolation—models performed at or near ceiling across the board, with an overall accuracy of 85.33%. These results suggest that observed interference effects are not due to basic perceptual limitations.</p>
+  <p>For standard control tasks—where each component process was tested in isolation—models performed at or near ceiling...</p>
   <h3>Scaling and Resources</h3>
-  <p>We find a strong correlation between model size and conflict resolution ability. This mirrors human patterns under time constraints and supports the hypothesis that cognitive control mechanisms may arise naturally from scaled training and representation complexity.</p>
+  <img src="scaling.png" alt="Scaling Analysis">
+  <p>We find a strong correlation between model size and conflict resolution ability...</p>
 </section>
 
 <section class="section" id="discussion">
   <h2>Discussion</h2>
   <h3>Key Findings</h3>
-  <p>Our results show that VLMs exhibit human-like congruency effects. More complex squared tasks revealed robust individual differences, particularly in models' sensitivity to hierarchical interference. This suggests a cross-system representational alignment, pointing to the emergence of cognitive control mechanisms in large-scale neural systems.</p>
+  <p>Our results show that VLMs exhibit human-like congruency effects. More complex squared tasks revealed robust individual differences...</p>
   <h3>Limitations and Future Work</h3>
-  <p>Future work could extend this framework to include a broader range of conflict types, such as stimulus–response and action-based conflict, as the current tasks primarily target stimulus–stimulus interference. Further work is needed to understand generalization across domains and real-world reasoning contexts.</p>
+  <p>Future work could extend this framework to include a broader range of conflict types...</p>
 </section>
 
 <section class="section" id="conclusion">
   <h2>Conclusion</h2>
-  <p>We showed that model performance closely aligns with human behavior under resource constraints and reveals robust individual differences across task conditions and model scales. These results provide substantial support for the emergence of human-like cognitive control in current multi-modal foundation models.</p>
+  <p>We showed that model performance closely aligns with human behavior under resource constraints and reveals robust individual differences...</p>
 </section>
 
 <section class="section" id="ack">
   <h2>Acknowledgments</h2>
-  <p>We thank Han Zhang, Jacob Sellers, and Sarah Liberatore for their insights and comments. We thank Zillion Network Inc. for providing the computation used in this work. Their optimized peak/off-peak scheduling, high-throughput storage infrastructure, and automated environment management enabled the cost-efficient and reliable execution of our experiments.</p>
+  <p>We thank Han Zhang, Jacob Sellers, and Sarah Liberatore for their insights and comments...</p>
 </section>
 
 <section class="section" id="bibtex">
   <h2>BibTeX</h2>
-  <pre><code>@inproceedings{wang2025psychophysics,
-  title={Machine Psychophysics: Cognitive Control in Vision-Language Models},
-  author={Luo, Dezhi and Wang, Maijunxian and Wang, Bingyang and Zhao, Tianwei and Li, Yijiang and Deng, Hokin},
-  booktitle={NeurIPS},
-  year={2025}
-}</code></pre>
+  <pre><code>@inproceedings{{wang2025psychophysics,
+  title={{Machine Psychophysics: Cognitive Control in Vision-Language Models}},
+  author={{Luo, Dezhi and Wang, Maijunxian and Wang, Bingyang and Zhao, Tianwei and Li, Yijiang and Deng, Hokin}},
+  booktitle={{NeurIPS}},
+  year={{2025}}
+}}</code></pre>
 </section>
 
 <footer>
