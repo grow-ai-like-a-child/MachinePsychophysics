@@ -57,7 +57,7 @@
     @media(min-width:1024px){.title.is-1{font-size:3rem!important}}
     .publication-title{margin-bottom:1rem!important}
     .author-block{margin-right:1rem}
-    figure figcaption{margin-top:6px;font-size:.8rem;color:#666}
+    figure figcaption{margin-top:6px;font-size:.8rem;color:#666;text-align:center;}
   </style>
 </head>
 <body>
@@ -206,6 +206,15 @@
   <div class="hero-body">
     <div class="container is-max-desktop">
       <h2 class="title is-3 has-text-centered" style="margin-top:2rem;">🔬 Experimental Design</h2>
+      <!-- Intro paragraph for the three-task battery -->
+      <div class="content has-text-justified" style="max-width:800px;margin:0 auto 1.5rem;">
+        <p><strong>We evaluate cognitive control in VLMs with a three-tier battery.</strong>
+          <br><b>(1) Standard&nbsp;tasks</b> reproduce classic Stroop and Flanker paradigms—models must ignore irrelevant colour or flanker cues in simple congruent vs.&nbsp;incongruent trials.
+          <br><b>(2) Squared&nbsp;tasks</b> add a second layer of conflict, yielding four hierarchical conditions (FC, FI, SCRI, SIRC) that tax executive control far beyond the standard benchmark.
+          <br><b>(3) The control battery</b> disentangles low-level demands by isolating OCR, colour perception, and 2-D spatial encoding, ensuring that any deficits arise from representational conflict rather than perception per&nbsp;se.
+        </p>
+      </div>
+
 
       <div id="methodology-carousel" class="carousel results-carousel">
 
@@ -261,6 +270,15 @@
 
       <!-- Scaling curve -->
       <h4 class="title is-5">Scaling with parameters</h4>
+
+      <p style="max-width:720px;margin:0 auto 1rem;text-align:center;">
+        Model size acts as a proxy for available computational resources.
+        Accuracy grows roughly log-linearly from 1 B to 110 B parameters,
+        yet even the largest models fall short of human performance on hierarchical
+        conflict. The curve closely resembles the resource–performance trade-off
+        measured with processing time in human psychophysics.
+      </p>
+      
       <figure style="text-align:center;">
         <img src="scaling.png" alt="Scaling curve" style="max-width:90%;">
         <figcaption><strong>Scaling Trend.</strong> Accuracy vs. parameter count (1 B → 110 B).</figcaption>
