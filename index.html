@@ -4,32 +4,36 @@
 <head>
   <link rel="shortcut icon" href="static/images/favicon.ico" type="image/x-icon">
   <meta charset="utf-8">
-  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
-  <!-- Replace the content tag with appropriate information -->
-  <meta name="description" content="We investigate whether state-of-the-art Vision Language Models can infer human gaze direction through a controlled study revealing significant performance gaps compared to human capabilities.">
-  <meta property="og:title" content="Can Vision Language Models Infer Human Gaze Direction? A Controlled Study"/>
-  <meta property="og:description" content="A rigorous evaluation of VLMs on gaze referential inference tasks, revealing systematic performance gaps compared to humans in understanding gaze direction and spatial reasoning."> 
-  <meta property="og:url" content="https://vlm-gaze.github.io/"/>
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
-  <meta property="og:image" content="static/images/teaser_v2.png"/>
+
+  <!-- ——— Meta 信息（SEO & 社交分享） ——— -->
+  <meta name="description" content="Large-scale psychophysics study shows emergent human-like cognitive control in 108 Vision–Language Models via Stroop & Flanker conflict tasks.">
+
+  <meta property="og:title" content="Machine Psychophysics: Cognitive Control in Vision–Language Models"/>
+  <meta property="og:description" content="108 VLMs × 2 220 trials reveal human-aligned congruency effects but large control deficits under hierarchical interference."/>
+  <meta property="og:url" content="https://vlm-psychophysics.github.io/"/>
+  <meta property="og:image" content="static/images/teaser_psychophysics.png"/>
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
 
-  <meta name="twitter:title" content="VLMs Cannot Infer Human Gaze Direction">
-  <meta name="twitter:description" content="Our controlled study reveals significant performance gaps between state-of-the-art Vision Language Models and humans in gaze referential inference tasks."> 
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
-  <meta name="twitter:image" content="static/images/teaser_v2.png">
+  <meta name="twitter:title" content="Machine Psychophysics: Cognitive Control in VLMs">
+  <meta name="twitter:description" content="Emergent executive-function signatures and scaling laws across 108 VLMs.">
+  <meta name="twitter:image" content="static/images/teaser_psychophysics.png">
   <meta name="twitter:card" content="summary_large_image">
-  <!-- Keywords for your paper to be indexed by-->
-  <meta name="keywords" content="Vision-Language Models, Gaze Inference, Human Vision, Spatial Reasoning, AI Evaluation">
-  <meta name="author" content="Zory Zhang, Pinyuan Feng, Bingyang Wang, Tianwei Zhao, Suyang Yu, Qingying Gao, Hokin Deng, Ziqiao Ma, Yijiang Li, Dezhi Luo (GrowAI Team)">
+
+  <!-- 索引关键词 -->
+  <meta name="keywords" content="Vision-Language Models, Cognitive Control, Conflict Tasks, Psychophysics, AI Evaluation">
+  <meta name="author" content="Dezhi Luo, Maijunxian Wang, Bingyang Wang, Tianwei Zhao, Yijiang Li, Hokin Deng (GrowAI Team)">
   <meta name="robots" content="index, follow">
 
+  <!-- 视口设置 -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Can Vision Language Models Infer Human Gaze Direction?</title>
+  <!-- 页面标题 -->
+  <title>Machine Psychophysics: Cognitive Control in Vision–Language Models</title>
+
+  <!-- 字体与后续资源保持不变 -->
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
   rel="stylesheet">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
@@ -99,124 +103,94 @@
 </head>
 <body>
 
-  <section class="hero">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
+<!-- ===== Hero: title, authors, links (Gaze) ===== -->
+<!-- ===== Hero: title, authors, links (Machine Psychophysics) ===== -->
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+
+          <!-- Title -->
+          <div style="display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
+            <h1 class="title is-1 publication-title">🧠 Machine Psychophysics: Cognitive Control in Vision–Language Models</h1>
+          </div>
+          <h4 class="title is-size-4 publication-title" style="color:red;">
+            NeurIPS 2025<span style="font-weight:normal;font-style:italic;"> (Submitted)</span>
+          </h4>
+
+          <!-- Authors -->
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><a href="#" target="_blank">Dezhi Luo</a><sup>1</sup>,</span>
+            <span class="author-block"><a href="#" target="_blank">Maijunxian Wang</a><sup>2</sup>,</span>
+            <span class="author-block"><a href="#" target="_blank">Bingyang Wang</a><sup>3</sup>,</span>
+            <span class="author-block"><a href="#" target="_blank">Tianwei Zhao</a><sup>4</sup>,</span>
+            <span class="author-block"><a href="#" target="_blank">Yijiang Li</a><sup>5</sup>,</span>
+            <span class="author-block"><a href="#" target="_blank">Hokin Deng</a><sup>6</sup></span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <sup>1</sup>University of Michigan,
+              <sup>2</sup>UC Davis,
+              <sup>3</sup>Emory University,
+              <sup>4</sup>Johns Hopkins University,<br>
+              <sup>5</sup>UC San Diego,
+              <sup>6</sup>Carnegie Mellon University
+            </span>
+            <br>
+            <span class="author-block" style="color:#4a4a4a;margin-top:10px;">
+              🌱 <strong>GrowAI Team</strong> – <a href="https://growing-ai-like-a-child.github.io/" target="_blank" style="color:#3273dc;">growing-ai-like-a-child.github.io</a>
+            </span>
+          </div>
+
+          <!-- Links -->
           <div class="column has-text-centered">
-            <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
-              <h1 class="title is-1 publication-title">👁️ Can Vision Language Models Infer Human Gaze Direction? A Controlled Study</h1>
-            </div>
-            <h4 class="title is-size-4 publication-title" style="color: red;">NeurIPS 2025<span style="font-weight: normal; font-style: italic;"> (Submitted)</span></h4>
-            
-            <div class="is-size-5 publication-authors">
-              <!-- Paper authors -->
-              <span class="author-block">
-                <a href="#" target="_blank">Zory Zhang</a><sup>†,1</sup>,
-              </span>
-              <span class="author-block">
-                <a href="#" target="_blank">Pinyuan Feng</a><sup>†,2</sup>,
-              </span>
-              <span class="author-block">
-                <a href="#" target="_blank">Bingyang Wang</a><sup>3</sup>,
-              </span>
-              <span class="author-block">
-                <a href="#" target="_blank">Tianwei Zhao</a><sup>4</sup>,
-              </span>
-              <span class="author-block">
-                <a href="#" target="_blank">Suyang Yu</a><sup>5</sup>,
-              </span>
-              <br>
-              <span class="author-block">
-                <a href="#" target="_blank">Qingying Gao</a><sup>4</sup>,
-              </span>
-              <span class="author-block">
-                <a href="#" target="_blank">Hokin Deng</a><sup>*,6</sup>,
-              </span>
-              <span class="author-block">
-                <a href="https://mars-tin.github.io" target="_blank">Ziqiao Ma</a><sup>*,7</sup>,
-              </span>
-              <span class="author-block">
-                <a href="#" target="_blank">Yijiang Li</a><sup>*,8</sup>,
-              </span>
-              <span class="author-block">
-                <a href="https://ihzedoul.com" target="_blank">Dezhi Luo</a><sup>*,7</sup>
-              </span>
-            </div>
-
-            <div class="is-size-5 publication-authors">
-              <span class="author-block">
-                <sup>1</sup>Brown University,
-                <sup>2</sup>Columbia University,
-                <sup>3</sup>Emory University,
-                <sup>4</sup>Johns Hopkins University,<br>
-                <sup>5</sup>University of Washington,
-                <sup>6</sup>Carnegie Mellon University,
-                <sup>7</sup>University of Michigan,
-                <sup>8</sup>UC San Diego
-              </span>
-              <span class="eql-cntrb"><small><br><sup>†</sup>Equal Contribution, <sup>*</sup>Equal Advising</small></span>
-              <br>
-              <span class="author-block" style="color: #4a4a4a; margin-top: 10px;">
-                🌱 <strong>GrowAI Team</strong> - <a href="https://growing-ai-like-a-child.github.io/" target="_blank" style="color: #3273dc;">growing-ai-like-a-child.github.io</a>
-              </span>
-            </div>
-
-            <div class="column has-text-centered">
-              <div class="publication-links">
-                    <!-- PDF link -->
-                <span class="link-block">
-                  <a href="static/pdfs/vlm_gaze_paper.pdf" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="fas fa-file-pdf"></i>
-                  </span>
+            <div class="publication-links">
+              <!-- PDF -->
+              <span class="link-block">
+                <a href="static/pdfs/psychophysics_paper.pdf" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
                   <span>Paper</span>
                 </a>
               </span>
 
-                <!-- ArXiv abstract Link -->
-                <span class="link-block">
-                  <a href="#" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                  </span>
+              <!-- arXiv -->
+              <span class="link-block">
+                <a href="#" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="ai ai-arxiv"></i></span>
                   <span>arXiv</span>
                 </a>
               </span>
 
-                  <!-- Github link -->
-                  <span class="link-block">
-                    <a href="https://github.com/growing-ai-like-a-child/vlm-gaze" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
+              <!-- GitHub -->
+              <span class="link-block">
+                <a href="https://github.com/growing-ai-like-a-child/psychophysics" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fab fa-github"></i></span>
+                  <span>Code</span>
+                </a>
+              </span>
 
-                <!-- Dataset link -->
-                <span class="link-block">
-                  <a href="#" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    🗂️
-                  </span>
+              <!-- Dataset -->
+              <span class="link-block">
+                <a href="#" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">🗂️</span>
                   <span>Dataset</span>
                 </a>
               </span>
 
+              <!-- GrowAI -->
               <span class="link-block">
                 <a href="https://growing-ai-like-a-child.github.io/" target="_blank"
-                class="external-link button is-normal is-rounded is-dark">
-                <span class="icon">
-                  🌱
-                </span>
-                <span>GrowAI Project</span>
-              </a>
-            </span>
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">🌱</span>
+                  <span>GrowAI Project</span>
+                </a>
+              </span>
 
             </div>
             </div>
