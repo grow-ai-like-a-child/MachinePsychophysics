@@ -4,135 +4,113 @@
   <meta charset="utf-8" />
   <meta name="description" content="Machine Psychophysics: Cognitive Control in Vision–Language Models" />
   <meta name="keywords" content="Cognitive Control, Vision-Language Models, VLM, Psychophysics, AI, Executive Function" />
-  <meta property="og:image" content="./figure1.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Machine Psychophysics: Cognitive Control in Vision–Language Models</title>
-
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Machine Psychophysics: Cognitive Control in VLMs" />
-  <meta name="twitter:description" content="We evaluate 108 vision-language models across cognitive control tasks and reveal emergent human-like executive function." />
-  <meta name="twitter:image" content="./figure1.png" />
+  <title>Machine Psychophysics</title>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet" />
-  <link rel="stylesheet" href="./bulma.min.css" />
-  <link rel="stylesheet" href="./fontawesome.all.min.css" />
-  <link rel="stylesheet" href="./index.css" />
-  <link rel="icon" href="./favicon.svg" />
+  <link rel="stylesheet" href="./static/css/bulma.min.css" />
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css" />
+  <link rel="stylesheet" href="./static/css/index.css" />
+  <link rel="icon" href="./static/images/favicon.svg" />
 </head>
 
 <body>
-  <section class="hero">
-    <div class="hero-body">
-      <div class="container has-text-centered">
-        <h1 class="title is-1">Machine Psychophysics</h1>
-        <h2 class="subtitle is-3">Cognitive Control in Vision–Language Models</h2>
-        <p class="is-size-5">
-          Dezhi Luo<sup>1</sup>, Maijunxian Wang<sup>2</sup>, Bingyang Wang<sup>3*</sup>,<br>
-          Tianwei Zhao<sup>4*</sup>, Yijiang Li<sup>5</sup>, Hokin Deng<sup>6</sup>
-        </p>
-        <p class="is-size-6">
-          <sup>1</sup>UMich / UCL, <sup>2</sup>UC Davis, <sup>3</sup>Emory,<br>
-          <sup>4</sup>Johns Hopkins, <sup>5</sup>UCSD, <sup>6</sup>CMU
-        </p>
-        <br>
-        <div class="buttons is-centered">
-          <a href="./psychophysics_paper.pdf" class="button is-dark is-rounded">
-            <span class="icon"><i class="fas fa-file-pdf"></i></span><span>Paper</span>
-          </a>
-          <a href="https://github.com/YOUR_REPO" class="button is-dark is-rounded">
-            <span class="icon"><i class="fab fa-github"></i></span><span>Code</span>
-          </a>
-          <a href="#bibtex" class="button is-dark is-rounded">
-            <span class="icon"><i class="fas fa-quote-right"></i></span><span>BibTeX</span>
-          </a>
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Machine Psychophysics</h1>
+          <h1 class="title is-3 publication-title">Cognitive Control in Vision–Language Models</h1>
+          <div class="is-size-5 publication-authors">
+            <p>Dezhi Luo<sup>1</sup>, Maijunxian Wang<sup>2</sup>, Bingyang Wang<sup>3*</sup>, Tianwei Zhao<sup>4*</sup>, Yijiang Li<sup>5</sup>, Hokin Deng<sup>6</sup></p>
+            <p class="is-size-6">
+              <sup>1</sup>UMich/UCL, <sup>2</sup>UC Davis, <sup>3</sup>Emory, <sup>4</sup>Johns Hopkins, <sup>5</sup>UCSD, <sup>6</sup>CMU
+            </p>
+          </div>
+          <div class="publication-links mt-4">
+            <a href="./static/pdf/psychophysics_paper.pdf" class="external-link button is-normal is-rounded is-dark">
+              <span class="icon"><i class="fas fa-file-pdf"></i></span><span>Paper</span>
+            </a>
+            <a href="https://github.com/YOUR_REPO" class="external-link button is-normal is-rounded is-dark">
+              <span class="icon"><i class="fab fa-github"></i></span><span>Code</span>
+            </a>
+            <a href="#bibtex" class="external-link button is-normal is-rounded is-dark">
+              <span class="icon"><i class="fas fa-quote-right"></i></span><span>BibTeX</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section">
-    <div class="container has-text-centered">
-      <h2 class="title is-3">Abstract</h2>
-      <p>
-        Cognitive control refers to the ability to flexibly coordinate thought and action in pursuit of internal goals.
-        We evaluate 108 vision-language models on three classic conflict tasks and their more demanding “squared” variants across 2,220 trials.
-        Model performance corresponds closely to human behavior under resource constraints and reveals individual differences.
-        These results indicate that some form of human-like executive function has emerged in current multi-modal foundation models.
-      </p>
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body has-text-centered">
+      <img src="./figure1.png" class="cccenter" alt="Teaser image">
+      <h2 class="subtitle">
+        Evaluating cognitive control in VLMs using classic and squared conflict tasks. Tasks involve Stroop, Flanker, control variants, and scaling analysis.
+      </h2>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section">
-    <div class="container has-text-centered">
-      <h2 class="title is-3">Standard vs. Squared Tasks</h2>
-      <img src="./figure1.png" class="figure-img" alt="Standard Tasks">
-      <p><i>Stroop and Flanker tasks</i></p>
-      <br>
-      <img src="./figure2.png" class="figure-img" alt="Squared Tasks">
-      <p><i>Squared variants with layered conflict</i></p>
-      <br>
-      <img src="./standard_vs_squared.png" class="figure-img" alt="Standard vs Squared">
-    </div>
-  </section>
+<section class="section">
+  <div class="container is-max-desktop has-text-centered">
+    <h2 class="title is-3">Standard vs. Squared Tasks</h2>
+    <img src="./figure1.png" class="cccenter" alt="Standard Tasks">
+    <p>Stroop and Flanker standard task examples.</p>
+    <img src="./figure2.png" class="cccenter" alt="Squared Tasks">
+    <p>Squared variants with hierarchical interference.</p>
+    <img src="./standard_vs_squared.png" class="cccenter" alt="Standard vs Squared Chart">
+  </div>
+</section>
 
-  <section class="section">
-    <div class="container has-text-centered">
-      <h2 class="title is-3">Control Task Design</h2>
-      <img src="./control_tasks.png" class="figure-img" alt="Control Tasks">
-      <p>
-        Control tasks isolate OCR, color perception, and spatial recognition to rule out low-level deficiencies.
-        All models performed at or near ceiling in these tasks, confirming that errors in the main tasks arise from representational conflict.
-      </p>
-    </div>
-  </section>
+<section class="section">
+  <div class="container is-max-desktop has-text-centered">
+    <h2 class="title is-3">Control Tasks</h2>
+    <img src="./control_tasks.png" class="cccenter" alt="Control Tasks">
+    <p>Control conditions isolating OCR, color perception, and spatial attention.</p>
+  </div>
+</section>
 
-  <section class="section">
-    <div class="container has-text-centered">
-      <h2 class="title is-3">Scaling Analysis</h2>
-      <img src="./scaling.png" class="figure-img" alt="Scaling Results">
-      <p>
-        Model performance across different scales reveals human-like congruency effects on classic and squared tasks.
-        Small models succeed in congruent cases but fail under conflict, whereas large models resolve interference more effectively.
-      </p>
-    </div>
-  </section>
+<section class="section">
+  <div class="container is-max-desktop has-text-centered">
+    <h2 class="title is-3">Scaling Analysis</h2>
+    <img src="./scaling.png" class="cccenter" alt="Scaling Chart">
+    <p>Congruency effects and model behavior under increasing parameter scale.</p>
+  </div>
+</section>
 
-  <section class="section">
-    <div class="container has-text-centered">
-      <h2 class="title is-3">Key Insight</h2>
-      <p>
-        Our study suggests that cognitive control mechanisms—previously thought to require symbolic modeling—can emerge from scaled associative systems trained via general-purpose learning.
-        This bridges the gap between symbolic cognitive architectures and neural network-based models of intelligence.
-      </p>
-    </div>
-  </section>
+<section class="section">
+  <div class="container is-max-desktop has-text-centered">
+    <h2 class="title is-3">Acknowledgments</h2>
+    <p>
+      We thank Han Zhang, Jacob Sellers, and Sarah Liberatore for their comments. Thanks to <a href="https://zillion.network">Zillion Network Inc.</a> for compute support.
+    </p>
+  </div>
+</section>
 
-  <section class="section">
-    <div class="container has-text-centered">
-      <h2 class="title is-3">Acknowledgments</h2>
-      <p>
-        We thank Han Zhang, Jacob Sellers, and Sarah Liberatore for insightful comments.
-        Thanks to <a href="https://zillion.network">Zillion Network Inc.</a> for providing compute infrastructure.
-      </p>
-    </div>
-  </section>
-
-  <section class="section" id="bibtex">
-    <div class="container has-text-centered">
-      <h2 class="title is-3">BibTeX</h2>
-      <pre><code>@inproceedings{{wang2025psychophysics,
+<section class="section" id="bibtex">
+  <div class="container is-max-desktop content has-text-centered">
+    <h2 class="title is-3">BibTeX</h2>
+    <pre><code>@inproceedings{{wang2025psychophysics,
   title={{Machine Psychophysics: Cognitive Control in Vision-Language Models}},
   author={{Luo, Dezhi and Wang, Maijunxian and Wang, Bingyang and Zhao, Tianwei and Li, Yijiang and Deng, Hokin}},
   booktitle={{NeurIPS}},
   year={{2025}}
 }}</code></pre>
-    </div>
-  </section>
+  </div>
+</section>
 
-  <footer class="footer">
+<footer class="footer">
+  <div class="container">
     <div class="content has-text-centered">
-      <p>Built with ❤️ | Based on SpatialVLM template</p>
+      <p>Adapted from MQT-LLaVA site template | Made with ❤️ by the authors</p>
     </div>
-  </footer>
+  </div>
+</footer>
+
 </body>
 </html>
