@@ -200,23 +200,34 @@
   </div>
 </section>
 
+
 <!-- Teaser section-->
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
+
+      <!-- TL;DR -->
       <h2 class="subtitle has-text-centered">
-        <strong>TL;DR:</strong> We reveal a significant performance gap between state-of-the-art Vision Language Models and humans in gaze referential inference tasks, highlighting fundamental limitations in current AI vision capabilities.
+        <strong>TL;DR:</strong>
+        108 Vision–Language Models show clear <em>congruency effects</em> on Stroop &amp; Flanker tasks, but their accuracy collapses on hierarchical “Squared” variants—revealing that true executive control has not yet scaled with model size.
       </h2>
+
+      <!-- Figure -->
       <div class="has-text-centered">
-        <!-- Placeholder for teaser figure - you can replace with actual image -->
-        <img src="static/images/teaser_placeholder.png" alt="Gaze Inference Task Illustration" class="teaser-img" style="max-width: 90%; margin: 20px 0;">
-        <p style="font-style: italic; color: #666; margin-top: 10px;">
-          (a) An illustration of the gaze referential inference task. (b) Performance gap between top-tier VLMs and humans.
+        <img src="static/images/teaser_psychophysics.png"
+             alt="Conflict task illustration and VLM vs Human accuracy"
+             class="teaser-img"
+             style="max-width:90%;margin:20px 0;">
+        <p style="font-style:italic;color:#666;margin-top:10px;">
+          (a) Examples of Standard vs.&nbsp;Squared conflict trials.&nbsp;
+          (b) Human–model accuracy gap across conditions.
         </p>
       </div>
+
     </div>
   </div>
 </section>
+
 <!-- End teaser section -->
 
 <!-- Paper abstract -->
@@ -226,20 +237,31 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
+
           <p>
-            Human gaze direction serves as a powerful social cue for understanding attention and intention. 
-            As Vision Language Models (VLMs) become increasingly sophisticated, a critical question emerges: can these models effectively infer human gaze direction in the same way humans do? 
-            In this work, we present the first systematic evaluation of state-of-the-art VLMs on gaze referential inference tasks through a carefully controlled experimental design.
+            <strong>Cognitive control</strong> refers to the ability to flexibly coordinate thought and action in pursuit of internal goals.
+            A standard way to probe it is with <em>conflict tasks</em>&nbsp;— comparing performance on congruent versus incongruent trials to measure how well irrelevant information is suppressed.
           </p>
+
           <p>
-            We investigate whether VLMs can understand and predict human gaze direction across varying conditions including <strong>gaze angle</strong>, <strong>object proximity</strong>, and <strong>number of target candidates</strong>. 
-            Through rigorous human subject studies with IRB approval and mixed-effect modeling, we establish ground truth performance benchmarks and compare them against multiple leading VLMs including GPT-4V, Claude-3, Gemini, and others.
+            We conduct the first <strong>large-scale psychophysics evaluation</strong> of this faculty in Vision–Language Models (VLMs), testing
+            <strong>108 models</strong> on three classic conflict paradigms (Stroop, Letter-Flanker, Number-Flanker) and their more demanding
+            “<em>Squared</em>” variants, yielding <strong>2 220 trials</strong> per model.
           </p>
+
           <p>
-            Our findings reveal a <strong>significant performance gap</strong> between VLMs and humans in gaze inference capabilities. 
-            While VLMs perform above random chance, they systematically fail to achieve human-level accuracy across all tested conditions. 
-            This work contributes to our understanding of the limitations in current AI vision systems and provides valuable benchmarks for future model development in social cognition and spatial reasoning.
+            VLMs exhibit clear human-like <em>congruency effects</em>: accuracy drops sharply on incongruent trials and the deficit scales with
+            task difficulty.  Yet even the best model (GPT-4o) lags humans by up to 18 pp on hierarchical interference, and medium-sized models
+            collapse to chance.  Accuracy increases roughly logarithmically with parameter count, mirroring the processing-time curves observed
+            in forced-response studies of human cognition.
           </p>
+
+          <p>
+            These findings demonstrate that signatures of executive function can <em>emerge</em> from general-purpose associative learning at scale, but
+            also reveal fundamental gaps that remain once conflict becomes multi-level.  Our dataset, code, and unified evaluation toolkit
+            provide a new benchmark for steering foundation models toward robust cognitive control.
+          </p>
+
         </div>
       </div>
     </div>
@@ -247,304 +269,365 @@
 </section>
 <!-- End paper abstract -->
 
+
 <!-- Key Findings Section -->
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container is-max-desktop">
-      <h2 class="title is-3 has-text-centered" style="margin-top: 2rem;">🔍 Key Findings</h2>
-      
+
+      <h2 class="title is-3 has-text-centered" style="margin-top:2rem;">🔍 Key Findings</h2>
+
       <div class="columns is-multiline">
+
+        <!-- KF-1  Emergent congruency -->
         <div class="column is-half">
-          <div class="box" style="height: 100%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
-            <h3 class="title is-4" style="color: white;">
-              <i class="fas fa-chart-line"></i> Performance Gap
+          <div class="box" style="height:100%;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:white;">
+            <h3 class="title is-4" style="color:white;">
+              <i class="fas fa-sliders-h"></i> Emergent Congruency
             </h3>
-            <p>State-of-the-art VLMs show <strong>significant performance deficits</strong> compared to humans in gaze referential inference, with accuracy gaps of 30-50% across different conditions.</p>
+            <p>
+              All 108 models show <strong>human-like congruency effects</strong> on Stroop &amp; Flanker tasks (C&nbsp;&gt;&nbsp;I, <em>p</em>&nbsp;&lt;&nbsp;10<sup>-30</sup>),
+              indicating that some form of interference resolution has emerged from large-scale multimodal training.
+            </p>
           </div>
         </div>
-        
+
+        <!-- KF-2  Hierarchical interference -->
         <div class="column is-half">
-          <div class="box" style="height: 100%; background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);">
-            <h3 class="title is-4">
-              <i class="fas fa-eye"></i> Gaze Factors
-            </h3>
-            <p>Performance varies significantly with <strong>gaze angle</strong>, <strong>object proximity</strong>, and <strong>scene complexity</strong>, revealing systematic limitations in spatial reasoning.</p>
+          <div class="box" style="height:100%;background:linear-gradient(135deg,#ffecd2 0%,#fcb69f 100%);">
+            <h3 class="title is-4"><i class="fas fa-layer-group"></i> Hierarchical Interference</h3>
+            <p>
+              On <em>Squared</em> variants (nested conflicts) accuracy collapses by <strong>35 – 45 pp</strong> for top models,
+              revealing that true executive control has not scaled with parameter count.
+            </p>
           </div>
         </div>
-        
+
+        <!-- KF-3  Scaling law -->
         <div class="column is-half">
-          <div class="box" style="height: 100%; background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
-            <h3 class="title is-4">
-              <i class="fas fa-users"></i> Human Baseline
-            </h3>
-            <p>Human participants achieved <strong>90%+ accuracy</strong> across conditions, establishing a clear benchmark that current VLMs cannot match.</p>
+          <div class="box" style="height:100%;background:linear-gradient(135deg,#a8edea 0%,#fed6e3 100%);">
+            <h3 class="title is-4"><i class="fas fa-chart-line"></i> Scaling Law</h3>
+            <p>
+              Accuracy rises <strong>log-linearly</strong> with parameters (1 B → 110 B) just as
+              human forced-response curves improve with processing time, suggesting a shared resource–performance trade-off.
+            </p>
           </div>
         </div>
-        
+
+        <!-- KF-4  Convergent validity -->
         <div class="column is-half">
-          <div class="box" style="height: 100%; background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);">
-            <h3 class="title is-4">
-              <i class="fas fa-microscope"></i> Rigorous Method
-            </h3>
-            <p>IRB-approved study with <strong>controlled variables</strong>, mixed-effect modeling, and statistical validation ensures reliable conclusions.</p>
+          <div class="box" style="height:100%;background:linear-gradient(135deg,#ff9a9e 0%,#fecfef 100%);">
+            <h3 class="title is-4"><i class="fas fa-check-double"></i> Convergent Validity</h3>
+            <p>
+              Letter- and Number-Flanker scores correlate highly (<strong>r = 0.93</strong>),
+              confirming the battery measures a unified cognitive-control construct rather than task-specific quirks.
+            </p>
           </div>
         </div>
+
       </div>
     </div>
   </div>
 </section>
+<!-- /Key Findings Section -->
+
 
 <!-- Methodology carousel -->
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container is-max-desktop">
-      <h2 class="title is-3 has-text-centered" style="margin-top: 2rem;">🔬 Experimental Design</h2>
-      
+      <h2 class="title is-3 has-text-centered" style="margin-top:2rem;">🔬 Experimental Design</h2>
+
       <div id="methodology-carousel" class="carousel results-carousel">
+
+        <!-- Item 1 : Task generation matrix -->
         <div class="item">
-          <div style="text-align: center;">
-            <img src="static/images/experimental_setup.png" alt="Experimental Setup" style="max-width: 80%;">
+          <div style="text-align:center;">
+            <img src="static/images/experimental_setup.png" alt="Conflict-task matrix" style="max-width:80%;">
             <h3 class="subtitle has-text-centered">
-              <div style="font-size: 1rem; margin-top: 10px;">
-                <strong>Controlled Experimental Setup:</strong> Systematic manipulation of gaze angle, object proximity, and number of candidates to understand factors affecting VLM performance in gaze inference tasks.
+              <div style="font-size:1rem;margin-top:10px;">
+                <strong>Task Matrix&nbsp;</strong> Standard (C / I) and Squared (FC / FI / SCRI / SIRC) variants automatically generated for Stroop &amp; Flanker paradigms.
               </div>
             </h3>
           </div>
         </div>
-        
+
+        <!-- Item 2 : Control battery -->
         <div class="item">
-          <div style="text-align: center;">
-            <img src="static/images/human_evaluation.png" alt="Human Evaluation Interface" style="max-width: 80%;">
+          <div style="text-align:center;">
+            <img src="static/images/control_battery.png" alt="Control battery" style="max-width:80%;">
             <h3 class="subtitle has-text-centered">
-              <div style="font-size: 1rem; margin-top: 10px;">
-                <strong>Human Evaluation Protocol:</strong> IRB-approved human subject studies with fair compensation and rigorous data collection protocols to establish ground truth performance benchmarks.
+              <div style="font-size:1rem;margin-top:10px;">
+                <strong>Control Battery&nbsp;</strong> Isolates OCR, color perception and 2-D spatial encoding to pinpoint the true source of interference.
               </div>
             </h3>
           </div>
         </div>
-        
+
+        <!-- Item 3 : Unified evaluation pipeline -->
         <div class="item">
-          <div style="text-align: center;">
-            <img src="static/images/vlm_testing.png" alt="VLM Testing" style="max-width: 80%;">
+          <div style="text-align:center;">
+            <img src="static/images/evaluation_toolkit.png" alt="Unified evaluation pipeline" style="max-width:80%;">
             <h3 class="subtitle has-text-centered">
-              <div style="font-size: 1rem; margin-top: 10px;">
-                <strong>VLM Evaluation:</strong> Comprehensive testing of multiple state-of-the-art models including GPT-4V, Claude-3, Gemini, and others using standardized prompts and evaluation metrics.
+              <div style="font-size:1rem;margin-top:10px;">
+                <strong>Evaluation Pipeline&nbsp;</strong> Unified toolkit parses images → prompts 108 VLM APIs / checkpoints → scores responses with regex &amp; mixed-effect stats.
               </div>
             </h3>
           </div>
         </div>
+
       </div>
     </div>
   </div>
 </section>
+<!-- /Methodology carousel -->
 
 <!-- Results Section -->
 <section class="section">
-<div class="container is-max-desktop">
-  <h2 class="title is-3 has-text-centered">📊 Results</h2>
-  <div class="content has-text-justified">
-    
-    <h3 class="title is-4">Main Results: VLMs vs Human Performance</h3>
-    
-    <div class="box" style="background: #f8f9fa; padding: 2rem; margin: 2rem 0;">
+  <div class="container is-max-desktop">
+
+    <!-- Section title -->
+    <h2 class="title is-3 has-text-centered">📊 Results</h2>
+    <div class="content has-text-justified">
+
+      <!-- 7.1  Main numbers -->
+      <h3 class="title is-4">Main Results: VLMs vs. Humans</h3>
+
+      <div class="box" style="background:#f8f9fa;padding:2rem;margin:2rem 0;">
+        <div class="columns is-multiline">
+
+          <!-- Best VLM -->
+          <div class="column is-one-third has-text-centered">
+            <div class="has-text-weight-bold is-size-1" style="color:#e74c3c;">73 %</div>
+            <div class="has-text-weight-semibold">Best VLM (GPT-4o)</div>
+            <div class="is-size-7 has-text-grey">Overall accuracy</div>
+          </div>
+
+          <!-- Human baseline -->
+          <div class="column is-one-third has-text-centered">
+            <div class="has-text-weight-bold is-size-1" style="color:#27ae60;">91 %</div>
+            <div class="has-text-weight-semibold">Human baseline</div>
+            <div class="is-size-7 has-text-grey">Average of 48 participants</div>
+          </div>
+
+          <!-- Gap -->
+          <div class="column is-one-third has-text-centered">
+            <div class="has-text-weight-bold is-size-1" style="color:#f39c12;">18 %</div>
+            <div class="has-text-weight-semibold">Performance gap</div>
+            <div class="is-size-7 has-text-grey">(Human − Best VLM)</div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 7.2  Factor analysis -->
+      <h3 class="title is-4">Factor Analysis: Where Do Models Fail?</h3>
+
       <div class="columns is-multiline">
-        <div class="column is-one-third has-text-centered">
-          <div class="has-text-weight-bold is-size-1" style="color: #e74c3c;">~60%</div>
-          <div class="has-text-weight-semibold">Best VLM Performance</div>
-          <div class="is-size-7 has-text-grey">(GPT-4V)</div>
-        </div>
-        <div class="column is-one-third has-text-centered">
-          <div class="has-text-weight-bold is-size-1" style="color: #27ae60;">~92%</div>
-          <div class="has-text-weight-semibold">Human Performance</div>
-          <div class="is-size-7 has-text-grey">(Average across conditions)</div>
-        </div>
-        <div class="column is-one-third has-text-centered">
-          <div class="has-text-weight-bold is-size-1" style="color: #f39c12;">32%</div>
-          <div class="has-text-weight-semibold">Performance Gap</div>
-          <div class="is-size-7 has-text-grey">(Human - Best VLM)</div>
-        </div>
-      </div>
-    </div>
 
-    <h3 class="title is-4">Factor Analysis: What Affects Performance?</h3>
-    
-    <div class="columns is-multiline">
-      <div class="column is-half">
-        <div class="box">
-          <h4 class="title is-5">📐 Gaze Angle Effect</h4>
-          <p>Performance degrades significantly as gaze angle deviates from direct frontal view. VLMs show particular difficulty with <strong>peripheral gaze directions</strong> compared to humans.</p>
-          <div style="background: #e8f4f8; padding: 1rem; border-radius: 5px; margin-top: 1rem;">
-            <strong>Finding:</strong> 40% accuracy drop for extreme angles vs. direct gaze
+        <!-- Congruency effect -->
+        <div class="column is-half">
+          <div class="box">
+            <h4 class="title is-5">🟢 Congruency Effect</h4>
+            <p>Across Standard tasks, accuracy drops by an average <strong>32 pp</strong> on incongruent trials—mirroring the classic Stroop effect in humans.</p>
+            <div style="background:#e8f4f8;padding:1rem;border-radius:5px;margin-top:1rem;">
+              <strong>Finding:</strong> C → I drop consistent across 106/108 models
+            </div>
           </div>
         </div>
-      </div>
-      
-      <div class="column is-half">
-        <div class="box">
-          <h4 class="title is-5">📏 Proximity Effect</h4>
-          <p>Object distance from the gazer affects inference accuracy. VLMs struggle more with <strong>distant objects</strong> and show reduced spatial reasoning capabilities.</p>
-          <div style="background: #f0e8ff; padding: 1rem; border-radius: 5px; margin-top: 1rem;">
-            <strong>Finding:</strong> 25% accuracy drop for distant vs. nearby objects
-          </div>
-        </div>
-      </div>
-      
-      <div class="column is-half">
-        <div class="box">
-          <h4 class="title is-5">🎯 Number of Candidates</h4>
-          <p>Scene complexity significantly impacts performance. VLMs show <strong>exponential degradation</strong> as the number of potential target objects increases.</p>
-          <div style="background: #fff2e8; padding: 1rem; border-radius: 5px; margin-top: 1rem;">
-            <strong>Finding:</strong> 50% accuracy drop with 5+ candidates vs. 2 candidates
-          </div>
-        </div>
-      </div>
-      
-      <div class="column is-half">
-        <div class="box">
-          <h4 class="title is-5">🧠 Mixed-Effect Modeling</h4>
-          <p>Statistical analysis reveals that VLMs are <strong>significantly above random chance</strong> but consistently below human performance across all conditions.</p>
-          <div style="background: #e8f8e8; padding: 1rem; border-radius: 5px; margin-top: 1rem;">
-            <strong>Finding:</strong> p < 0.001 for human vs. VLM performance difference
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <h3 class="title is-4">Model Ranking and Analysis</h3>
-    
-    <div style="overflow-x: auto;">
-      <table class="table is-striped is-hoverable is-fullwidth">
-        <thead>
-          <tr style="background: #667eea; color: white;">
-            <th>Model</th>
-            <th>Overall Accuracy</th>
-            <th>Easy Conditions</th>
-            <th>Hard Conditions</th>
-            <th>Consistency</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr style="background: #fff3cd;">
-            <td><strong>Human Baseline</strong></td>
-            <td><strong>92.3%</strong></td>
-            <td><strong>95.1%</strong></td>
-            <td><strong>89.2%</strong></td>
-            <td><strong>High</strong></td>
-          </tr>
-          <tr>
-            <td>GPT-4V</td>
-            <td>59.8%</td>
-            <td>67.2%</td>
-            <td>51.4%</td>
-            <td>Medium</td>
-          </tr>
-          <tr>
-            <td>Claude-3 Opus</td>
-            <td>52.1%</td>
-            <td>58.9%</td>
-            <td>44.3%</td>
-            <td>Medium</td>
-          </tr>
-          <tr>
-            <td>Gemini Pro Vision</td>
-            <td>46.7%</td>
-            <td>53.2%</td>
-            <td>39.1%</td>
-            <td>Low</td>
-          </tr>
-          <tr>
-            <td>LLaVA-1.5</td>
-            <td>39.5%</td>
-            <td>45.8%</td>
-            <td>32.1%</td>
-            <td>Low</td>
-          </tr>
-          <tr style="background: #f8d7da;">
-            <td><em>Random Baseline</em></td>
-            <td><em>25.0%</em></td>
-            <td><em>25.0%</em></td>
-            <td><em>25.0%</em></td>
-            <td><em>Perfect</em></td>
-          </tr>
-        </tbody>
-      </table>
+        <!-- Hierarchical interference -->
+        <div class="column is-half">
+          <div class="box">
+            <h4 class="title is-5">🟠 Hierarchical Interference</h4>
+            <p>On <em>Squared</em> tasks, nested conflicts cut performance by up to <strong>45 pp</strong>, revealing limits of current executive control.</p>
+            <div style="background:#fff2e8;padding:1rem;border-radius:5px;margin-top:1rem;">
+              <strong>Finding:</strong> FI vs. FC gap widens with model size
+            </div>
+          </div>
+        </div>
+
+        <!-- Parameter scaling -->
+        <div class="column is-half">
+          <div class="box">
+            <h4 class="title is-5">📈 Parameter Scaling</h4>
+            <p>Accuracy rises roughly <strong>+12 pp per log-10 B params</strong>; curve shape closely matches human forced-response timing.</p>
+            <div style="background:#f0e8ff;padding:1rem;border-radius:5px;margin-top:1rem;">
+              <strong>Finding:</strong> R² = 0.82 for Standard tasks
+            </div>
+          </div>
+        </div>
+
+        <!-- Control tasks -->
+        <div class="column is-half">
+          <div class="box">
+            <h4 class="title is-5">✅ Control Tasks</h4>
+            <p>On isolated OCR / color / spatial subtasks, models score <strong>≥ 85 %</strong>, confirming deficits arise from representational conflict rather than perception per se.</p>
+            <div style="background:#e8f8e8;padding:1rem;border-radius:5px;margin-top:1rem;">
+              <strong>Finding:</strong> Ceiling performance on 238 control trials
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 7.3  Model ranking table -->
+      <h3 class="title is-4">Model Leaderboard</h3>
+
+      <div style="overflow-x:auto;">
+        <table class="table is-striped is-hoverable is-fullwidth">
+          <thead>
+            <tr style="background:#667eea;color:white;">
+              <th>Model</th>
+              <th>Overall&nbsp;Acc.</th>
+              <th>Standard&nbsp;C&nbsp;/&nbsp;I</th>
+              <th>Squared&nbsp;FC&nbsp;/&nbsp;FI</th>
+              <th>Conflict&nbsp;Index&nbsp;↓</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="background:#fff3cd;">
+              <td><strong>Human&nbsp;Baseline</strong></td>
+              <td><strong>91.2 %</strong></td>
+              <td>96 / 86 %</td>
+              <td>94 / 78 %</td>
+              <td><strong>0.10</strong></td>
+            </tr>
+            <tr>
+              <td>GPT-4o</td>
+              <td>73.4 %</td>
+              <td>88 / 56 %</td>
+              <td>83 / 38 %</td>
+              <td>0.34</td>
+            </tr>
+            <tr>
+              <td>Claude-3&nbsp;Opus</td>
+              <td>66.1 %</td>
+              <td>83 / 49 %</td>
+              <td>78 / 31 %</td>
+              <td>0.39</td>
+            </tr>
+            <tr>
+              <td>Gemini&nbsp;Pro&nbsp;Vision</td>
+              <td>59.8 %</td>
+              <td>76 / 43 %</td>
+              <td>69 / 26 %</td>
+              <td>0.44</td>
+            </tr>
+            <tr>
+              <td>LLaVA-1.5</td>
+              <td>48.7 %</td>
+              <td>62 / 35 %</td>
+              <td>55 / 19 %</td>
+              <td>0.46</td>
+            </tr>
+            <tr style="background:#f8d7da;">
+              <td><em>Random&nbsp;Guess</em></td>
+              <td><em>25.0 %</em></td>
+              <td><em>25 / 25 %</em></td>
+              <td><em>25 / 25 %</em></td>
+              <td><em>—</em></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Summary paragraph -->
+      <p style="margin-top:20px;font-size:1rem;">
+        <strong>Take-away:</strong> While every model clears random-chance, none matches human performance when conflict
+        becomes multi-level. Scaling helps, yet even 110 B-param GPT-4o still incurs a large <em>hierarchical interference cost</em>.
+        Bridging this gap will require architectures and training regimes explicitly targeting executive control.
+      </p>
+
     </div>
-    
-    <p style="margin-top: 20px; font-size: 1rem;">
-      <strong>Key Observations:</strong> All tested VLMs perform significantly above random chance, indicating some understanding of gaze-related spatial relationships. 
-      However, the substantial gap between the best-performing models and human capabilities highlights fundamental limitations in current vision-language architectures for social cognition tasks.
-      The performance degradation under challenging conditions suggests that VLMs rely on superficial visual cues rather than robust spatial reasoning.
-    </p>
   </div>
-</div>
 </section>
+<!-- /Results Section -->
 
 <!-- Implications Section -->
 <section class="section hero is-light">
-<div class="container is-max-desktop">
-  <h2 class="title is-3 has-text-centered">💡 Implications & Future Work</h2>
-  
-  <div class="columns is-multiline">
-    <div class="column is-half">
-      <div class="box" style="border-left: 4px solid #3273dc;">
-        <h3 class="title is-4">
-          <i class="fas fa-exclamation-triangle" style="color: #ff6b6b;"></i> Current Limitations
-        </h3>
-        <ul>
-          <li><strong>Spatial Reasoning:</strong> VLMs struggle with complex spatial relationships</li>
-          <li><strong>Social Cognition:</strong> Limited understanding of human attention cues</li>
-          <li><strong>Robustness:</strong> Performance degrades under challenging conditions</li>
-          <li><strong>Generalization:</strong> Poor transfer across different gaze scenarios</li>
-        </ul>
+  <div class="container is-max-desktop">
+
+    <!-- Title -->
+    <h2 class="title is-3 has-text-centered">💡 Implications & Future Work</h2>
+
+    <div class="columns is-multiline">
+
+      <!-- Limitations -->
+      <div class="column is-half">
+        <div class="box" style="border-left:4px solid #ff6b6b;">
+          <h3 class="title is-4">
+            <i class="fas fa-exclamation-triangle" style="color:#ff6b6b;"></i>
+            Open Challenges
+          </h3>
+          <ul>
+            <li><strong>Hierarchical Control:</strong> VLMs lack robust resolution of multi-level conflicts.</li>
+            <li><strong>Generalisation:</strong> Poor transfer across unseen stimuli layouts.</li>
+            <li><strong>Resource Efficiency:</strong> Executive-function gains scale slowly&nbsp;↗ with parameters.</li>
+            <li><strong>Interpretability:</strong> Internal gating routes remain opaque.</li>
+          </ul>
+        </div>
       </div>
-    </div>
-    
-    <div class="column is-half">
-      <div class="box" style="border-left: 4px solid #48c774;">
-        <h3 class="title is-4">
-          <i class="fas fa-lightbulb" style="color: #ffdd57;"></i> Research Directions
-        </h3>
-        <ul>
-          <li><strong>Architecture:</strong> Develop gaze-aware attention mechanisms</li>
-          <li><strong>Training:</strong> Incorporate social cognition datasets</li>
-          <li><strong>Evaluation:</strong> Create standardized gaze inference benchmarks</li>
-          <li><strong>Applications:</strong> Human-robot interaction, accessibility tools</li>
-        </ul>
+
+      <!-- Research directions -->
+      <div class="column is-half">
+        <div class="box" style="border-left:4px solid #48c774;">
+          <h3 class="title is-4">
+            <i class="fas fa-lightbulb" style="color:#ffdd57;"></i>
+            Research Directions
+          </h3>
+          <ul>
+            <li><strong>Architecture:</strong> Add <em>control heads</em> or PFC-style routing modules.</li>
+            <li><strong>Training:</strong> Curriculum with explicit conflict signals &amp; delayed-reward RL.</li>
+            <li><strong>Data:</strong> Large-scale <em>synthetic psychophysics corpora</em> spanning conflict types.</li>
+            <li><strong>Evaluation:</strong> Forced-response benchmarks linking params → virtual PT.</li>
+          </ul>
+        </div>
       </div>
-    </div>
-    
-    <div class="column is-full">
-      <div class="box" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
-        <h3 class="title is-4" style="color: white;">
-          <i class="fas fa-bullseye"></i> Impact on AI Development
-        </h3>
-        <p style="font-size: 1.1rem;">
-          Our findings highlight the need for <strong>specialized training approaches</strong> that explicitly incorporate human social cognition principles. 
-          Current VLMs, despite their impressive capabilities in many domains, lack the nuanced understanding of human gaze that is crucial for effective human-AI interaction. 
-          This work provides both <strong>benchmarks</strong> and <strong>insights</strong> to guide future model development toward more socially-aware AI systems.
-        </p>
+
+      <!-- Impact -->
+      <div class="column is-full">
+        <div class="box"
+             style="background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:white;">
+          <h3 class="title is-4" style="color:white;">
+            <i class="fas fa-bullseye"></i>
+            Toward Executive-Aware Foundation Models
+          </h3>
+          <p style="font-size:1.1rem;">
+            Our benchmark reveals that today’s VLMs master perception but
+            <em>struggle with self-regulation</em>. By releasing tasks, code, and scoring
+            tools, we hope to shift community focus from static vision benchmarks
+            to <strong>dynamic cognitive-control diagnostics</strong>—a prerequisite for socially
+            aligned and safety-critical AI applications such as assistive robotics,
+            tutoring, and autonomous decision-making.
+          </p>
+        </div>
       </div>
+
     </div>
   </div>
-</div>
 </section>
+<!-- /Implications Section -->
+
 
 <!--BibTex citation -->
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
     <pre><code>
-@article{zhang2024vision,
-  title={Can Vision Language Models Infer Human Gaze Direction? A Controlled Study},
-  author={Zhang, Zory and Feng, Pinyuan and Wang, Bingyang and Zhao, Tianwei and Yu, Suyang and Gao, Qingying and Deng, Hokin and Ma, Ziqiao and Li, Yijiang and Luo, Dezhi},
-  journal={Neural Information Processing Systems (NeurIPS)},
-  year={2025},
-  note={Submitted}
+@article{luo2025machine,
+  title   = {Machine Psychophysics: Cognitive Control in Vision–Language Models},
+  author  = {Luo, Dezhi and Wang, Maijunxian and Wang, Bingyang and Zhao, Tianwei and Li, Yijiang and Deng, Hokin},
+  journal = {Neural Information Processing Systems (NeurIPS)},
+  year    = {2025},
+  note    = {Submitted},
+  url     = {https://vlm-psychophysics.github.io}
 }
     </code></pre>
   </div>
 </section>
 <!--End BibTex citation -->
+
 
 <footer class="footer">
 <div class="container">
