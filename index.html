@@ -6,11 +6,11 @@
 
   <!-- ——— Meta 信息（SEO & Social） ——— -->
   <meta name="description"
-        content="Large-scale psychophysics study shows emergent cognitive-control signatures in 108 Vision–Language Models via Stroop & Flanker conflict tasks.">
+        content="Large-scale psychophysics study shows emergent cognitive-control signatures in 108 Vision–Language Models via 2 220 conflict trials + 238 control trials."><!-- 🔄 MODIFIED -->
   <meta property="og:title"
         content="Machine Psychophysics: Cognitive Control in Vision–Language Models"/>
   <meta property="og:description"
-        content="108 VLMs × 2 220 trials reveal human-aligned congruency effects and persistent hierarchical-conflict deficits."/>
+        content="108 VLMs × 2 220 conflict trials (plus 238 control) reveal human-aligned congruency effects and persistent hierarchical-conflict deficits." /><!-- 🔄 MODIFIED -->
   <meta property="og:url" content="https://vlm-psychophysics.github.io/"/>
   <meta property="og:image" content="standard_vs_squared.png"/>
   <meta property="og:image:width" content="1200"/>
@@ -154,8 +154,12 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p><strong>Cognitive control</strong> refers to the ability to flexibly coordinate thought and action. Conflict-task paradigms benchmark this faculty by contrasting congruent and incongruent trials.</p>
-          <p>We conduct the first <strong>large-scale psychophysics evaluation</strong> of Vision–Language Models, testing <strong>108 models</strong> on Stroop, Letter- and Number-Flanker tasks plus their more demanding “<em>Squared</em>” variants — <strong>2 220 trials</strong> each.</p>
-          <p>Models show human-like congruency patterns, yet collapse when conflicts are hierarchical. Accuracy grows monotonically with parameter count, echoing resource-limited curves in human forced-response studies.</p>
+          <p><!-- 🔄 MODIFIED -->
+            We conduct the first <strong>large-scale psychophysics evaluation</strong> of Vision–Language Models, testing <strong>108 models</strong> on Stroop, Letter- and Number-Flanker tasks plus their more demanding “<em>Squared</em>” variants — <strong>a total of 2 220 conflict trials per model, plus 238 control trials</strong>.
+          </p><!-- 🔄 MODIFIED -->
+          <p><!-- 🔄 MODIFIED -->
+            Models show human-like congruency patterns, yet collapse when conflicts are hierarchical. Accuracy grows <em>roughly log-linearly</em> with parameter count, echoing resource-limited curves in human forced-response studies.
+          </p><!-- 🔄 MODIFIED -->
           <p>The benchmark demonstrates that executive-function signatures can emerge from general-purpose learning at scale while revealing clear gaps for future research.</p>
         </div>
       </div>
@@ -186,7 +190,9 @@
         <div class="column is-half">
           <div class="box" style="height:100%;background:linear-gradient(135deg,#a8edea 0%,#fed6e3 100%);">
             <h3 class="title is-4"><i class="fas fa-chart-line"></i> Scaling Trend</h3>
-            <p>Performance rises monotonically from ~1 B to 110 B parameters, paralleling human processing-time curves.</p>
+            <p><!-- 🔄 MODIFIED -->
+              Performance rises <strong>roughly log-linearly</strong> from ~1 B to 110 B parameters, paralleling human processing-time curves.
+            </p>
           </div>
         </div>
         <div class="column is-half">
@@ -206,15 +212,13 @@
   <div class="hero-body">
     <div class="container is-max-desktop">
       <h2 class="title is-3 has-text-centered" style="margin-top:2rem;">🔬 Experimental Design</h2>
-      <!-- Intro paragraph for the three-task battery -->
       <div class="content has-text-justified" style="max-width:800px;margin:0 auto 1.5rem;">
         <p><strong>We evaluate cognitive control in VLMs with a three-tier battery.</strong>
-          <br><b>(1) Standard&nbsp;tasks</b> reproduce classic Stroop and Flanker paradigms—models must ignore irrelevant colour or flanker cues in simple congruent vs.&nbsp;incongruent trials.
-          <br><b>(2) Squared&nbsp;tasks</b> add a second layer of conflict, yielding four hierarchical conditions (FC, FI, SCRI, SIRC) that tax executive control far beyond the standard benchmark.
-          <br><b>(3) The control battery</b> disentangles low-level demands by isolating OCR, colour perception, and 2-D spatial encoding, ensuring that any deficits arise from representational conflict rather than perception per&nbsp;se.
+          <br><b>(1) Standard&nbsp;tasks</b> reproduce classic Stroop and Flanker paradigms—models must ignore irrelevant colour or flanker cues in simple congruent vs.&nbsp;incongruent trials. <u>They include <strong>84 Stroop</strong> (42 C / 42 I) and <strong>180 Letter- / 180 Number-Flanker</strong> (90 C / 90 I) stimuli.</u><!-- 🔄 MODIFIED -->
+          <br><b>(2) Squared&nbsp;tasks</b> add a second layer of conflict, yielding four hierarchical conditions (FC, FI, SCRI, SIRC) that tax executive control far beyond the standard benchmark. <u>This yields <strong>336 Stroop-Squared</strong> and <strong>720 per Flanker-Squared</strong> stimuli.</u><!-- 🔄 MODIFIED -->
+          <br><b>(3) The control battery</b> disentangles low-level demands by isolating OCR, colour perception, and 2-D spatial encoding, ensuring that any deficits arise from representational conflict rather than perception&nbsp;per se. <u>It contains <strong>238 control trials</strong>.</u><!-- 🔄 MODIFIED -->
         </p>
       </div>
-
 
       <div id="methodology-carousel" class="carousel results-carousel">
 
@@ -222,7 +226,9 @@
         <div class="item">
           <figure>
             <img src="figure1.png" alt="Standard tasks">
-            <figcaption><strong>Standard Tasks.</strong> Congruent vs. incongruent Stroop &amp; Flanker stimuli.</figcaption>
+            <figcaption><!-- 🔄 MODIFIED -->
+              <strong>Standard Tasks.</strong> 84 Stroop + 180 × 2 Flanker stimuli – congruent vs.&nbsp;incongruent.
+            </figcaption>
           </figure>
         </div>
 
@@ -230,7 +236,9 @@
         <div class="item">
           <figure>
             <img src="figure2.png" alt="Squared tasks">
-            <figcaption><strong>Squared Tasks.</strong> Four hierarchical conflict conditions (FC / FI / SCRI / SIRC).</figcaption>
+            <figcaption><!-- 🔄 MODIFIED -->
+              <strong>Squared Tasks.</strong> 4 conflict conditions (FC / FI / SCRI / SIRC): 336 Stroop-Squared + 720 × 2 Flanker-Squared stimuli.
+            </figcaption>
           </figure>
         </div>
 
@@ -238,7 +246,9 @@
         <div class="item">
           <figure>
             <img src="control_tasks.png" alt="Control tasks">
-            <figcaption><strong>Control Battery.</strong> Isolates OCR, color perception, spatial encoding.</figcaption>
+            <figcaption><!-- 🔄 MODIFIED -->
+              <strong>Control Battery.</strong> 238 trials disentangling OCR, colour, and spatial encoding.
+            </figcaption>
           </figure>
         </div>
 
@@ -271,14 +281,14 @@
       <!-- Scaling curve -->
       <h4 class="title is-5">Scaling with parameters</h4>
 
-      <p style="max-width:720px;margin:0 auto 1rem;text-align:left;">
+      <p style="max-width:720px;margin:0 auto 1rem;text-align:left;"><!-- 🔄 MODIFIED -->
         Model size acts as a proxy for available computational resources.
-        Accuracy grows roughly log-linearly from 1 B to 110 B parameters,
+        Accuracy grows <strong>roughly log-linearly</strong> from 1 B to 110 B parameters,
         yet even the largest models fall short of human performance on hierarchical
         conflict. The curve closely resembles the resource–performance trade-off
         measured with processing time in human psychophysics.
       </p>
-      
+
       <figure style="text-align:center;">
         <img src="scaling.png" alt="Scaling curve" style="max-width:90%;">
         <figcaption><strong>Scaling Trend.</strong> Accuracy vs. parameter count (1 B → 110 B).</figcaption>
