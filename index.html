@@ -48,27 +48,27 @@
     .title.is-1{font-size:2.5rem!important} @media(min-width:1024px){.title.is-1{font-size:3rem!important}}
     @media(min-width:1440px){.title.is-1{font-size:3.5rem!important}}
 
-    /* 深色模式：标题全部白字 */
+    /* 深色标题白字 */
     [data-theme="dark"] .title{color:#ffffff!important;}
 
-    /* 深色模式下覆盖 Bulma is-light hero */
+    /* 深色下 .hero.is-light 修正 */
     [data-theme="dark"] .hero.is-light{background:#1e1e1e!important;color:#e5e5e5!important;}
 
+    /* ★ NEW 深色下 所有 strong/figcaption 的文字颜色 */
+    [data-theme="dark"] p strong,
+    [data-theme="dark"] li strong,
+    [data-theme="dark"] figcaption strong{color:#ffffff!important;}
+    [data-theme="dark"] figcaption{color:#dcdcdc!important;}
+
     /* Key Findings 渐变卡片 */
-    .gradient-box{
-      position:relative;
-      color:#f5f5f5!important;           /* 柔和白 */
-      text-shadow:0 1px 3px rgba(0,0,0,.4);
-    }
-    .gradient-box::before{
-      content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
-      background:rgba(0,0,0,.15);mix-blend-mode:multiply;   /* 0.15 亮一点 */
-    }
+    .gradient-box{position:relative;color:#f5f5f5!important;text-shadow:0 1px 3px rgba(0,0,0,.4)}
+    .gradient-box::before{content:"";position:absolute;inset:0;border-radius:inherit;
+      background:rgba(0,0,0,.15);mix-blend-mode:multiply;pointer-events:none}
 
     /* Design 段落 <u> 去下划线 */
     #design u{text-decoration:none;}
 
-    /* 图像与盒子美化 */
+    /* 图像美化 */
     .carousel img,figure img{border-radius:8px;box-shadow:0 4px 8px rgba(0,0,0,.08)}
     .box{border-radius:6px;box-shadow:0 2px 6px rgba(0,0,0,.05)}
     figure figcaption{margin-top:6px;font-size:.8rem;color:#666;text-align:center}
@@ -80,7 +80,7 @@
 </head>
 <body>
 
-<!-- Sticky navbar -->
+<!-- Sticky Nav -->
 <nav class="navbar" role="navigation">
   <div class="container is-max-desktop" style="justify-content:space-between">
     <div class="navbar-brand">
@@ -196,7 +196,7 @@
       <h2 class="title is-3 has-text-centered" style="margin-top:2rem;">🔬 Experimental Design</h2>
       <div class="content has-text-justified" style="max-width:800px;margin:0 auto 1.5rem">
         <p><strong>We evaluate cognitive control in VLMs with a three-tier battery.</strong>
-          <br><b>(1) Standard tasks</b> reproduce classic Stroop and Flanker paradigms — models must ignore irrelevant colour or flanker cues in simple congruent vs. incongruent trials. <u>They include <strong>84 Stroop</strong> (42 C/42 I) and <strong>180 Letter- / 180 Number-Flanker</strong> (90 C/90 I) stimuli.</u>
+          <br><b>(1) Standard tasks</b> reproduce classic Stroop and Flanker paradigms — models must ignore irrelevant colour or flanker cues in simple congruent vs. incongruent trials. <u>They include <strong>84 Stroop</strong> (42&nbsp;C/42&nbsp;I) and <strong>180 Letter- / 180 Number-Flanker</strong> (90&nbsp;C/90&nbsp;I) stimuli.</u>
           <br><b>(2) Squared tasks</b> add a second layer of conflict, yielding four hierarchical conditions (FC, FI, SCRI, SIRC) that tax executive control far beyond the standard benchmark. <u>This yields <strong>336 Stroop-Squared</strong> and <strong>720 stimuli for each Flanker-Squared task</strong>.</u>
           <br><b>(3) Control battery</b> disentangles low-level demands by isolating OCR, colour perception, and 2-D spatial encoding, ensuring that any deficits arise from representational conflict rather than perception per se. <u>It contains <strong>238 control trials</strong>.</u>
         </p>
@@ -246,12 +246,12 @@
 
       <h4 class="title is-5">Scaling with parameters</h4>
       <p style="max-width:720px;margin:0 auto 1rem">
-        Model size acts as a proxy for available computational resources. Accuracy grows <strong>roughly log-linearly</strong> from 1 B to 110 B parameters, yet even the largest models fall short of human performance on hierarchical conflict.
+        Model size acts as a proxy for available computational resources. Accuracy grows <strong>roughly log-linearly</strong> from 1&nbsp;B to 110&nbsp;B parameters, yet even the largest models fall short of human performance on hierarchical conflict.
       </p>
 
       <figure style="text-align:center">
         <img loading="lazy" src="scaling.png" alt="Scaling curve" style="max-width:90%">
-        <figcaption><strong>Scaling Trend.</strong> Accuracy vs. parameter count (1 B → 110 B).</figcaption>
+        <figcaption><strong>Scaling Trend.</strong> Accuracy vs. parameter count (1&nbsp;B → 110&nbsp;B).</figcaption>
       </figure>
     </div>
   </div>
@@ -289,27 +289,25 @@
 
 <!-- JS -->
 <script>
-  /* Burger */
-  document.querySelector('.navbar-burger').onclick=function(){
-    this.classList.toggle('is-active');
-    document.getElementById(this.dataset.target).classList.toggle('is-active');
-  };
+  /* burger */
+  const burger=document.querySelector('.navbar-burger');
+  burger.onclick=()=>{burger.classList.toggle('is-active');document.getElementById(burger.dataset.target).classList.toggle('is-active');};
 
-  /* Theme toggle */
+  /* theme */
   const root=document.documentElement,btn=document.getElementById('theme-toggle');
   if(localStorage.theme==='dark'){root.dataset.theme='dark';btn.innerHTML='<span class="icon"><i class="fas fa-sun"></i></span>';}
   btn.onclick=()=>{const dark=root.dataset.theme==='dark';root.dataset.theme=dark?'light':'dark';
     btn.innerHTML=dark?'<span class="icon"><i class="fas fa-moon"></i></span>':'<span class="icon"><i class="fas fa-sun"></i></span>';
     localStorage.theme=root.dataset.theme;};
 
-  /* Copy BibTeX */
+  /* copy bib */
   document.getElementById('copyBtn').onclick=()=>{
     navigator.clipboard.writeText(document.getElementById('bibtex').innerText).then(()=>{
-      const c=document.getElementById('copyBtn');c.textContent='Copied!';setTimeout(()=>c.textContent='Copy',1500);
+      const b=document.getElementById('copyBtn');b.textContent='Copied!';setTimeout(()=>b.textContent='Copy',1500);
     });
   };
 
-  /* Carousel */
+  /* carousel */
   document.addEventListener('DOMContentLoaded',()=>bulmaCarousel.attach());
 </script>
 </body>
