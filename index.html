@@ -8,119 +8,91 @@
   <meta name="description"
         content="Large-scale psychophysics study shows emergent cognitive-control signatures in 108 Vision–Language Models across 2 220 trials (+ 238 control trials).">
   <meta property="og:title"
-        content="Machine Psychophysics: Cognitive Control in Vision–Language Models"/>
+        content="Machine Psychophysics: Cognitive Control in Vision–Language Models">
   <meta property="og:description"
-        content="108 VLMs across 2 220 trials (plus 238 control) reveal human-aligned congruency effects and persistent hierarchical-conflict deficits."/>
-  <meta property="og:url" content="https://vlm-psychophysics.github.io/"/>
-  <meta property="og:image" content="standard_vs_squared.png"/>
-  <meta property="og:image:width" content="1200"/>
-  <meta property="og:image:height" content="630"/>
+        content="108 VLMs across 2 220 trials (plus 238 control) reveal human-aligned congruency effects and persistent hierarchical-conflict deficits.">
+  <meta property="og:url" content="https://vlm-psychophysics.github.io/">
+  <meta property="og:image" content="standard_vs_squared.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
 
-  <meta name="twitter:title"
-        content="Machine Psychophysics: Cognitive Control in VLMs">
-  <meta name="twitter:description"
-        content="Emergent executive-function signatures and scaling trends across 108 VLMs.">
+  <meta name="twitter:title" content="Machine Psychophysics: Cognitive Control in VLMs">
+  <meta name="twitter:description" content="Emergent executive-function signatures and scaling trends across 108 VLMs.">
   <meta name="twitter:image" content="standard_vs_squared.png">
   <meta name="twitter:card" content="summary_large_image">
 
-  <meta name="keywords"
-        content="Vision-Language Models, Cognitive Control, Conflict Tasks, Psychophysics, AI Evaluation">
-  <meta name="author"
-        content="Dezhi Luo, Maijunxian Wang, Bingyang Wang, Tianwei Zhao, Yijiang Li, Hokin Deng (GrowAI Team)">
-  <meta name="robots" content="index, follow">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <title>Machine Psychophysics: Cognitive Control in Vision–Language Models</title>
 
-  <!-- --- Google Fonts & Bulma --- -->
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <!-- Google Fonts & Bulma -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
-  <!-- --- JS libs --- -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- libs -->
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/js/bulma-carousel.min.js"></script>
 
-  <!-- MathJax -->
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script id="MathJax-script" async
-          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
-  <!-- --- 样式 --- -->
   <style>
     :root{
       --bg-main:#ffffff;
-      --bg-card:#fafafa;
       --text-main:#1a1a1a;
-      --box-grad-1:#667eea;
-      --box-grad-2:#764ba2;
     }
     [data-theme="dark"]{
       --bg-main:#181818;
-      --bg-card:#202124;
       --text-main:#e5e5e5;
     }
-    html{scroll-behavior:smooth;}
-    body{background:var(--bg-main);color:var(--text-main);font-family:"Noto Sans",sans-serif;}
-    .navbar{position:sticky;top:0;z-index:20;background:var(--bg-main);box-shadow:0 2px 4px rgba(0,0,0,.06);}
-    .navbar-item.is-active{font-weight:600;}
-    .hero-body{padding:3rem 1.5rem}
-    .title.is-1{font-size:2.5rem!important}
-    @media(min-width:1024px){.title.is-1{font-size:3rem!important}}
-    @media(min-width:1440px){.title.is-1{font-size:3.5rem!important}}
-    .carousel .item{display:flex;flex-direction:column;align-items:center}
-    .carousel img{max-height:450px;object-fit:contain;border-radius:8px;box-shadow:0 4px 8px rgba(0,0,0,.08)}
-    figure img{border-radius:8px;box-shadow:0 4px 8px rgba(0,0,0,.08)}
-    figure figcaption{margin-top:6px;font-size:.8rem;color:#666;text-align:center}
-    .box{border-radius:6px;box-shadow:0 2px 6px rgba(0,0,0,.05)}
-    /* 渐变 box 调整文字可读性 */
-    .box strong,.box p,.box h3{color:#fff!important;text-shadow:0 1px 2px rgba(0,0,0,.25)}
-    /* BibTeX copy button */
-    .copy-btn{position:absolute;top:8px;right:8px;border:none;background:#3273dc;color:#fff;border-radius:4px;font-size:.8rem;padding:4px 8px;cursor:pointer}
-    .copy-btn:active{transform:scale(.96)}
-  </style>
 
-  <!-- --- JSON-LD structured data --- -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"ScholarlyArticle",
-    "name":"Machine Psychophysics: Cognitive Control in Vision–Language Models",
-    "author":[
-      {"@type":"Person","name":"Dezhi Luo"},
-      {"@type":"Person","name":"Maijunxian Wang"},
-      {"@type":"Person","name":"Bingyang Wang"},
-      {"@type":"Person","name":"Tianwei Zhao"},
-      {"@type":"Person","name":"Yijiang Li"},
-      {"@type":"Person","name":"Hokin Deng"}
-    ],
-    "datePublished":"2025",
-    "url":"https://vlm-psychophysics.github.io",
-    "publisher":{"@type":"Organization","name":"Neural Information Processing Systems"}
-  }
-  </script>
+    html{scroll-behavior:smooth}
+    body{background:var(--bg-main);color:var(--text-main);font-family:"Noto Sans",sans-serif}
+
+    .navbar{position:sticky;top:0;z-index:20;background:var(--bg-main);box-shadow:0 2px 4px rgba(0,0,0,.06)}
+    .hero-body{padding:3rem 1.5rem}
+    .title.is-1{font-size:2.5rem!important} @media(min-width:1024px){.title.is-1{font-size:3rem!important}}
+    @media(min-width:1440px){.title.is-1{font-size:3.5rem!important}}
+
+    /* -------- dark-mode fix for Bulma .hero.is-light -------- */
+    [data-theme="dark"] .hero.is-light{
+      background:#1e1e1e!important;
+      color:#e5e5e5!important;
+    }
+
+    /* key-findings 渐变可读性 */
+    .gradient-box{position:relative;color:#fff!important;text-shadow:0 2px 5px rgba(0,0,0,.6)}
+    .gradient-box::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.25);
+      mix-blend-mode:multiply;border-radius:inherit;pointer-events:none}
+
+    /* design 段去掉 <u> 下划线 */
+    #design u{text-decoration:none}
+
+    /* images & cards */
+    .carousel img,figure img{border-radius:8px;box-shadow:0 4px 8px rgba(0,0,0,.08)}
+    .box{border-radius:6px;box-shadow:0 2px 6px rgba(0,0,0,.05)}
+    figure figcaption{margin-top:6px;font-size:.8rem;color:#666;text-align:center}
+
+    /* copy btn */
+    .copy-btn{position:absolute;top:8px;right:8px;border:none;background:#3273dc;color:#fff;
+      border-radius:4px;font-size:.8rem;padding:4px 8px;cursor:pointer}
+  </style>
 </head>
 <body>
 
-<!-- ===== Sticky Nav ===== -->
-<nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="container is-max-desktop" style="justify-content:space-between;">
+<!-- Sticky navbar -->
+<nav class="navbar" role="navigation">
+  <div class="container is-max-desktop" style="justify-content:space-between">
     <div class="navbar-brand">
-      <a class="navbar-item" href="#top">VLM-Psychophysics</a>
-      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
-        <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+      <a class="navbar-item" href="#">VLM-Psychophysics</a>
+      <a role="button" class="navbar-burger" data-target="navMenu">
+        <span></span><span></span><span></span>
       </a>
     </div>
     <div id="navMenu" class="navbar-menu">
-      <div class="navbar-start">
-        <a class="navbar-item" href="#abstract">Abstract</a>
-        <a class="navbar-item" href="#design">Design</a>
-        <a class="navbar-item" href="#results">Results</a>
-        <a class="navbar-item" href="#BibTeX">BibTeX</a>
-      </div>
+      <a class="navbar-item" href="#abstract">Abstract</a>
+      <a class="navbar-item" href="#design">Design</a>
+      <a class="navbar-item" href="#results">Results</a>
+      <a class="navbar-item" href="#BibTeX">BibTeX</a>
     </div>
     <button id="theme-toggle" class="button is-small is-rounded">
       <span class="icon"><i class="fas fa-moon"></i></span>
@@ -128,63 +100,47 @@
   </div>
 </nav>
 
-<!-- ===== Hero ===== -->
-<section id="top" class="hero">
+<!-- Hero -->
+<section class="hero" id="top">
   <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">
-            🧠 Machine Psychophysics: Cognitive Control in Vision–Language Models
-          </h1>
-          <h4 class="title is-size-4" style="color:#e63946;">
-            NeurIPS&nbsp;2025 <em>(Submitted)</em>
-          </h4>
+    <div class="container is-max-desktop has-text-centered">
+      <h1 class="title is-1">
+        🧠 Machine Psychophysics: Cognitive Control in Vision–Language Models
+      </h1>
+      <h4 class="title is-size-4" style="color:#e63946;">NeurIPS&nbsp;2025 <em>(Submitted)</em></h4>
 
-          <!-- authors -->
-          <p class="is-size-5">
-            Dezhi Luo<sup>1</sup>, Maijunxian Wang<sup>2</sup>, Bingyang Wang<sup>3</sup>,<br>
-            Tianwei Zhao<sup>4</sup>, Yijiang Li<sup>5</sup>, Hokin Deng<sup>6</sup>
-          </p>
-          <p class="is-size-6">
-            <sup>1</sup>Michigan&nbsp;&nbsp;<sup>2</sup>UC Davis&nbsp;&nbsp;<sup>3</sup>Emory&nbsp;&nbsp;
-            <sup>4</sup>JHU&nbsp;&nbsp;<sup>5</sup>UCSD&nbsp;&nbsp;<sup>6</sup>CMU
-          </p>
-          <p class="is-size-6">
-            🌱 <strong>GrowAI Team</strong> – 
-            <a href="https://growing-ai-like-a-child.github.io/" target="_blank">growing-ai-like-a-child.github.io</a>
-          </p>
+      <p class="is-size-5">Dezhi Luo<sup>1</sup>, Maijunxian Wang<sup>2</sup>, Bingyang Wang<sup>3</sup>,<br>
+        Tianwei Zhao<sup>4</sup>, Yijiang Li<sup>5</sup>, Hokin Deng<sup>6</sup></p>
+      <p class="is-size-6">
+        <sup>1</sup>Michigan  <sup>2</sup>UC Davis  <sup>3</sup>Emory  <sup>4</sup>JHU  <sup>5</sup>UCSD  <sup>6</sup>CMU
+      </p>
+      <p class="is-size-6">🌱 <strong>GrowAI Team</strong> – 
+        <a href="https://growing-ai-like-a-child.github.io/" target="_blank">growing-ai-like-a-child.github.io</a>
+      </p>
 
-          <!-- links -->
-          <p style="margin-top:15px;">
-            <a class="button is-dark is-rounded" href="https://osf.io/preprints/osf/uve6p_v1" target="_blank">
-              <span class="icon"><i class="fas fa-file-pdf"></i></span><span>Paper</span>
-            </a>
-            <a class="button is-dark is-rounded" href="https://github.com/grow-ai-like-a-child/Psychophysics" target="_blank">
-              <span class="icon"><i class="fab fa-github"></i></span><span>Code & Dataset</span>
-            </a>
-          </p>
-        </div>
-      </div>
+      <p style="margin-top:15px">
+        <a class="button is-dark is-rounded" href="https://osf.io/preprints/osf/uve6p_v1" target="_blank">
+          <span class="icon"><i class="fas fa-file-pdf"></i></span><span>Paper</span></a>
+        <a class="button is-dark is-rounded" href="https://github.com/grow-ai-like-a-child/Psychophysics" target="_blank">
+          <span class="icon"><i class="fab fa-github"></i></span><span>Code & Dataset</span></a>
+      </p>
     </div>
   </div>
 </section>
-<!-- ===== /Hero ===== -->
 
-<!-- ===== Teaser ===== -->
+<!-- Teaser -->
 <section class="section">
   <div class="container is-max-desktop">
     <div class="notification is-primary is-light" style="font-size:1.1rem;">
-      <strong>TL;DR&nbsp;</strong>
+      <strong>TL;DR </strong>
       108 VLMs reproduce classic congruency effects on Stroop & Flanker tasks,
       yet collapse on hierarchical “Squared” conflicts — robust executive control
       still lags behind even in the largest models.
     </div>
   </div>
 </section>
-<!-- ===== /Teaser ===== -->
 
-<!-- ===== Abstract ===== -->
+<!-- Abstract -->
 <section id="abstract" class="section hero is-light">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
@@ -192,9 +148,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p><strong>Cognitive control</strong> refers to the ability to flexibly coordinate thought and action. Conflict-task paradigms benchmark this faculty by contrasting congruent and incongruent trials.</p>
-          <p>
-            We conduct the first <strong>large-scale psychophysics evaluation</strong> of Vision–Language Models, testing <strong>108 models</strong> on Stroop, Letter- and Number-Flanker tasks plus their more demanding “<em>Squared</em>” variants — <strong>across 2 220 trials, plus 238 control trials</strong>.
-          </p>
+          <p>We conduct the first <strong>large-scale psychophysics evaluation</strong> of Vision–Language Models, testing <strong>108 models</strong> on Stroop, Letter- and Number-Flanker tasks plus their more demanding “<em>Squared</em>” variants — <strong>across 2 220 trials, plus 238 control trials</strong>.</p>
           <p>Models show human-like congruency patterns, yet collapse when conflicts are hierarchical. Accuracy grows <em>roughly log-linearly</em> with parameter count, echoing resource-limited curves in human forced-response studies.</p>
           <p>The benchmark demonstrates that executive-function signatures can emerge from general-purpose learning at scale while revealing clear gaps for future research.</p>
         </div>
@@ -202,9 +156,8 @@
     </div>
   </div>
 </section>
-<!-- ===== /Abstract ===== -->
 
-<!-- ===== Key Findings ===== -->
+<!-- Key Findings -->
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container is-max-desktop">
@@ -212,25 +165,25 @@
 
       <div class="columns is-multiline">
         <div class="column is-half">
-          <div class="box has-background-primary" style="background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);">
+          <div class="box gradient-box" style="background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);">
             <h3 class="title is-4"><i class="fas fa-sliders-h"></i> Emergent Congruency</h3>
             <p>All models reproduce the classic congruency effect, indicating interference resolution emerges from multimodal pre-training.</p>
           </div>
         </div>
         <div class="column is-half">
-          <div class="box" style="background:linear-gradient(135deg,#ffecd2 0%,#fcb69f 100%);">
+          <div class="box gradient-box" style="background:linear-gradient(135deg,#ffecd2 0%,#fcb69f 100%);">
             <h3 class="title is-4"><i class="fas fa-layer-group"></i> Hierarchical Interference</h3>
             <p>Squared tasks introduce nested conflicts still unsolved by top-tier systems.</p>
           </div>
         </div>
         <div class="column is-half">
-          <div class="box" style="background:linear-gradient(135deg,#a8edea 0%,#fed6e3 100%);">
+          <div class="box gradient-box" style="background:linear-gradient(135deg,#a8edea 0%,#fed6e3 100%);">
             <h3 class="title is-4"><i class="fas fa-chart-line"></i> Scaling Trend</h3>
             <p>Performance rises <strong>roughly log-linearly</strong> from 1 B → 110 B parameters, paralleling human processing-time curves.</p>
           </div>
         </div>
         <div class="column is-half">
-          <div class="box" style="background:linear-gradient(135deg,#ff9a9e 0%,#fecfef 100%);">
+          <div class="box gradient-box" style="background:linear-gradient(135deg,#ff9a9e 0%,#fecfef 100%);">
             <h3 class="title is-4"><i class="fas fa-check-double"></i> Convergent Validity</h3>
             <p>Letter- and Number-Flanker scores strongly covary, confirming a unified control construct.</p>
           </div>
@@ -239,60 +192,49 @@
     </div>
   </div>
 </section>
-<!-- ===== /Key Findings ===== -->
 
-<!-- ===== Experimental Design Carousel ===== -->
+<!-- Experimental Design -->
 <section id="design" class="hero is-small">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <h2 class="title is-3 has-text-centered" style="margin-top:2rem;">🔬 Experimental Design</h2>
-
       <div class="content has-text-justified" style="max-width:800px;margin:0 auto 1.5rem;">
         <p><strong>We evaluate cognitive control in VLMs with a three-tier battery.</strong>
-          <br><b>(1) Standard tasks</b> reproduce classic Stroop and Flanker paradigms — models must ignore irrelevant colour or flanker cues in simple congruent vs.&nbsp;incongruent trials. <u>They include <strong>84 Stroop</strong> (42 C / 42 I) and <strong>180 Letter- / 180 Number-Flanker</strong> (90 C / 90 I) stimuli.</u>
-          <br><b>(2) Squared tasks</b> add a second layer of conflict, yielding four hierarchical conditions (FC, FI, SCRI, SIRC) that tax executive control far beyond the standard benchmark. <u>This yields <strong>336 Stroop-Squared</strong> and <strong>720 stimuli for each of the two Flanker-Squared tasks (Letter & Number)</strong>.</u>
-          <br><b>(3) Control battery</b> disentangles low-level demands by isolating OCR, colour perception, and 2-D spatial encoding, ensuring that any deficits arise from representational conflict rather than perception per se. <u>It contains <strong>238 control trials</strong>.</u>
+          <br><b>(1) Standard tasks</b> reproduce classic Stroop and Flanker paradigms — models must ignore irrelevant colour or flanker cues in simple congruent vs.&nbsp;incongruent trials. They include 84 Stroop (42 C / 42 I) and 180 Letter- / 180 Number-Flanker (90 C / 90 I) stimuli.
+          <br><b>(2) Squared tasks</b> add a second layer of conflict, yielding four hierarchical conditions (FC, FI, SCRI, SIRC) that tax executive control far beyond the standard benchmark. This yields 336 Stroop-Squared and 720 stimuli for each of the two Flanker-Squared tasks (Letter &amp; Number).
+          <br><b>(3) Control battery</b> disentangles low-level demands by isolating OCR, colour perception, and 2-D spatial encoding, ensuring that any deficits arise from representational conflict rather than perception per se. It contains 238 control trials.
         </p>
       </div>
 
       <div id="methodology-carousel" class="carousel results-carousel">
-
-        <!-- Standard tasks -->
         <div class="item">
           <figure>
-            <img loading="lazy" src="figure1.png" alt="Grid of example congruent and incongruent Stroop &amp; Flanker stimuli">
-            <figcaption><strong>Standard Tasks.</strong> 84 Stroop + 180 × 2 Flanker stimuli – congruent vs.&nbsp;incongruent.</figcaption>
+            <img loading="lazy" src="figure1.png" alt="Grid of congruent and incongruent Stroop and Flanker examples">
+            <figcaption><strong>Standard Tasks.</strong> 84 Stroop + 180 × 2 Flanker stimuli.</figcaption>
           </figure>
         </div>
-
-        <!-- Squared tasks -->
         <div class="item">
           <figure>
-            <img loading="lazy" src="figure2.png" alt="Diagram of four hierarchical conflict conditions FC / FI / SCRI / SIRC">
+            <img loading="lazy" src="figure2.png" alt="Diagram of FC, FI, SCRI, SIRC squared conditions">
             <figcaption><strong>Squared Tasks.</strong> 336 Stroop-Squared + 720 × 2 Flanker-Squared stimuli.</figcaption>
           </figure>
         </div>
-
-        <!-- Control battery -->
         <div class="item">
           <figure>
-            <img loading="lazy" src="control_tasks.png" alt="Panels illustrating OCR, colour and spatial control trials">
-            <figcaption><strong>Control Battery.</strong> 238 trials disentangling OCR, colour, and spatial encoding.</figcaption>
+            <img loading="lazy" src="control_tasks.png" alt="Examples of OCR, colour, spatial control trials">
+            <figcaption><strong>Control Battery.</strong> 238 trials disentangling OCR, colour and spatial encoding.</figcaption>
           </figure>
         </div>
-
       </div>
     </div>
   </div>
 </section>
-<!-- ===== /Experimental Design Carousel ===== -->
 
-<!-- ===== Results ===== -->
+<!-- Results -->
 <section id="results" class="section">
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered">📊 Results</h2>
     <div class="content has-text-justified">
-
       <h3 class="title is-4">Highlights</h3>
       <ul>
         <li>Standard tasks reproduce classic congruency patterns.</li>
@@ -302,31 +244,23 @@
       </ul>
 
       <figure style="text-align:center;margin:2rem 0;">
-        <img loading="lazy" src="standard_vs_squared.png" alt="Bar chart comparing model vs. human accuracy on Standard and Squared tasks" style="max-width:95%;">
+        <img loading="lazy" src="standard_vs_squared.png" alt="Bar chart comparing model and human performance" style="max-width:95%;">
         <figcaption><strong>Overall Results.</strong> Human-model accuracy across conflict conditions.</figcaption>
       </figure>
 
       <h4 class="title is-5">Scaling with parameters</h4>
-
       <p style="max-width:720px;margin:0 auto 1rem;">
-        Model size acts as a proxy for available computational resources.
-        Accuracy grows <strong>roughly log-linearly</strong> from 1 B to 110 B parameters,
-        yet even the largest models fall short of human performance on hierarchical
-        conflict. The curve closely resembles the resource–performance trade-off
-        measured with processing time in human psychophysics.
+        Model size acts as a proxy for available computational resources. Accuracy grows <strong>roughly log-linearly</strong> from 1 B to 110 B parameters, yet even the largest models fall short of human performance on hierarchical conflict.
       </p>
-
       <figure style="text-align:center;">
-        <img loading="lazy" src="scaling.png" alt="Scatter/line plot showing accuracy vs. log(model parameters)" style="max-width:90%;">
-        <figcaption><strong>Scaling Trend.</strong> Accuracy vs. parameter count (1 B → 110 B).</figcaption>
+        <img loading="lazy" src="scaling.png" alt="Line plot of accuracy vs log(parameters)" style="max-width:90%;">
+        <figcaption><strong>Scaling Trend.</strong> Accuracy vs parameter count (1 B → 110 B).</figcaption>
       </figure>
-
     </div>
   </div>
 </section>
-<!-- ===== /Results ===== -->
 
-<!-- ===== BibTeX ===== -->
+<!-- BibTeX -->
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content" style="position:relative;">
     <h2 class="title">BibTeX</h2>
@@ -343,70 +277,44 @@
 </code></pre>
   </div>
 </section>
-<!-- ===== /BibTeX ===== -->
 
 <footer class="footer">
   <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content has-text-centered">
-          <p><strong>🌱 GrowAI Team</strong><br>
-            <a href="https://growing-ai-like-a-child.github.io/" target="_blank">
-              growing-ai-like-a-child.github.io
-            </a>
-          </p>
-          <p style="font-size:0.9rem;">
-            Page adapted from the
-            <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">
-              Academic Project Page Template
-            </a>. Source licensed under
-            <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">
-              CC BY-SA 4.0
-            </a>.
-          </p>
-        </div>
-      </div>
+    <div class="content has-text-centered">
+      <p><strong>🌱 GrowAI Team</strong> —
+        <a href="https://growing-ai-like-a-child.github.io/" target="_blank">growing-ai-like-a-child.github.io</a>
+      </p>
+      <p style="font-size:.9rem;">
+        Page adapted from
+        <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.  
+        Licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.
+      </p>
     </div>
   </div>
 </footer>
 
-<!-- ===== JS 逻辑 ===== -->
+<!-- JS -->
 <script>
-  /* Bulma burger */
-  document.querySelectorAll('.navbar-burger').forEach(el=>{
-    el.addEventListener('click',()=> {
-      const target=document.getElementById(el.dataset.target);
-      el.classList.toggle('is-active');target.classList.toggle('is-active');
+  /* burger */
+  const burger=document.querySelector('.navbar-burger');
+  burger.onclick=()=>{burger.classList.toggle('is-active');document.getElementById(burger.dataset.target).classList.toggle('is-active');};
+
+  /* theme toggle */
+  const root=document.documentElement,btn=document.getElementById('theme-toggle');
+  if(localStorage.theme==='dark'){root.dataset.theme='dark';btn.innerHTML='<span class="icon"><i class="fas fa-sun"></i></span>';}
+  btn.onclick=()=>{const dark=root.dataset.theme==='dark';root.dataset.theme=dark?'light':'dark';
+    btn.innerHTML=dark?'<span class="icon"><i class="fas fa-moon"></i></span>':'<span class="icon"><i class="fas fa-sun"></i></span>';
+    localStorage.theme=root.dataset.theme;};
+
+  /* copy BibTeX */
+  document.getElementById('copyBtn').onclick=()=>{
+    navigator.clipboard.writeText(document.getElementById('bibtex').innerText).then(()=>{
+      const b=document.getElementById('copyBtn');b.textContent='Copied!';setTimeout(()=>b.textContent='Copy',1500);
     });
-  });
+  };
 
-  /* Theme toggle */
-  const htmlEl=document.documentElement;
-  const toggleBtn=document.getElementById('theme-toggle');
-  const savedTheme=localStorage.getItem('theme');
-  if(savedTheme==='dark'){htmlEl.setAttribute('data-theme','dark');toggleBtn.innerHTML='<span class="icon"><i class="fas fa-sun"></i></span>';}
-  toggleBtn.addEventListener('click',()=>{
-    const dark=htmlEl.getAttribute('data-theme')==='dark';
-    htmlEl.setAttribute('data-theme',dark?'light':'dark');
-    toggleBtn.innerHTML=dark?
-      '<span class="icon"><i class="fas fa-moon"></i></span>':
-      '<span class="icon"><i class="fas fa-sun"></i></span>';
-    localStorage.setItem('theme',dark?'light':'dark');
-  });
-
-  /* BibTeX copy */
-  document.getElementById('copyBtn').addEventListener('click',()=>{
-    const text=document.getElementById('bibtex').innerText;
-    navigator.clipboard.writeText(text).then(()=>{
-      const btn=document.getElementById('copyBtn');
-      btn.textContent='Copied!';
-      setTimeout(()=>btn.textContent='Copy',1500);
-    });
-  });
-
-  /* Carousel */
-  document.addEventListener('DOMContentLoaded', () => bulmaCarousel.attach());
-
+  /* carousel */
+  document.addEventListener('DOMContentLoaded',()=>bulmaCarousel.attach());
 </script>
 </body>
 </html>
