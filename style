@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,20 +38,18 @@
   }
   [data-theme="dark"] {
     --bg-main: #181818;
-    --text-main: #1a1a1a; /* 保持文字颜色一致 */
+    --text-main: #e5e5e5;
   }
-
   html {
     scroll-behavior: smooth;
   }
-
   body {
     background: var(--bg-main);
     color: var(--text-main);
     font-family: "Noto Sans", sans-serif;
   }
 
-  /* Navbar 固定 */
+  /* Navbar fixed styling */
   .navbar {
     position: sticky;
     top: 0;
@@ -66,39 +65,41 @@
   .title.is-1 {
     font-size: 2.5rem !important;
   }
+
   @media (min-width: 1024px) {
     .title.is-1 {
       font-size: 3rem !important;
     }
   }
+
   @media (min-width: 1440px) {
     .title.is-1 {
       font-size: 3.5rem !important;
     }
   }
 
-  /* 深色模式标题修正 */
+  /* Dark mode title fix */
   [data-theme="dark"] .title {
     color: #ffffff !important;
   }
 
-  /* Hero is-light 深色背景修正 */
+  /* Dark mode fix for .hero.is-light */
   [data-theme="dark"] .hero.is-light {
     background: #1e1e1e !important;
     color: #e5e5e5 !important;
   }
 
-  /* 强调文字修正 */
+  /* Strong/figcaption color fix for dark mode */
   [data-theme="dark"] p strong,
   [data-theme="dark"] li strong,
   [data-theme="dark"] figcaption strong {
-    color: #1a1a1a !important;
+    color: #ffffff !important;
   }
   [data-theme="dark"] figcaption {
-    color: #444 !important;
+    color: #dcdcdc !important;
   }
 
-  /* ✅ 关键模块卡片样式统一 */
+  /* Key Findings and Summary gradient box */
   .gradient-box {
     position: relative;
     color: #1a1a1a !important;
@@ -108,7 +109,6 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     transition: all 0.2s ease;
   }
-
   .gradient-box::before {
     content: "";
     position: absolute;
@@ -118,31 +118,34 @@
     mix-blend-mode: multiply;
     pointer-events: none;
   }
-
   [data-theme="dark"] .gradient-box {
-    background: #f5f5f5 !important;
+    background: #2b2b2b;
     color: #1a1a1a !important;
     text-shadow: none !important;
   }
 
-  /* ✅ 保证卡片文字统一间距 */
-  .gradient-box p strong {
-    display: inline-block;
-    font-size: 1.1rem;
-    margin-top: -0.2rem;
-    margin-bottom: 0.6rem;
+  .gradient-box .title-inside {
+    margin-top: 0;
+    margin-bottom: 0.2rem;
+    font-weight: 600;
+    font-size: 1.15rem;
+    line-height: 1.2;
   }
 
-  /* ✅ 等高布局支持 */
+  .gradient-box .box-body-text {
+    margin-top: 0.4rem;
+    line-height: 1.5;
+    font-size: 0.98rem;
+  }
+
+  /* Equal height columns for summary cards */
   .equal-height-columns {
     display: flex;
     flex-wrap: wrap;
   }
-
   .equal-height-columns .column {
     display: flex;
   }
-
   .equal-height-columns .box {
     flex: 1;
     display: flex;
@@ -151,13 +154,12 @@
     min-height: 240px;
   }
 
-  /* 图片样式 */
+  /* Figure styles */
   .carousel img,
   figure img {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
   }
-
   figure figcaption {
     margin-top: 6px;
     font-size: 0.8rem;
@@ -165,29 +167,26 @@
     text-align: center;
   }
 
-  /* 作者部分 */
+  /* Author tooltip-style inline affiliations */
   .affiliation {
     font-weight: normal;
     font-size: 0.9em;
     color: #888;
     margin-left: 4px;
   }
-
   a[title] {
     text-decoration: none;
     border-bottom: 1px dashed #ccc;
     cursor: help;
   }
-
   [data-theme="dark"] a[title] {
     border-bottom-color: #666;
   }
-
   [data-theme="dark"] .affiliation {
     color: #aaa;
   }
 
-  /* BibTeX 拷贝按钮 */
+  /* BibTeX copy button */
   .copy-btn {
     position: absolute;
     top: 8px;
@@ -201,22 +200,20 @@
     cursor: pointer;
   }
 
-  /* Footer 深色修正 */
+  /* Footer in dark mode */
   [data-theme="dark"] .footer {
     background-color: #181818 !important;
     color: #e5e5e5 !important;
   }
-
   [data-theme="dark"] .footer a {
     color: #a0c8ff !important;
   }
 
-  /* 去掉 design 中下划线 */
+  /* Remove underlines from #design <u> */
   #design u {
     text-decoration: none;
   }
 </style>
-
 
 
 
@@ -447,42 +444,55 @@
         <figcaption><strong>Scaling Trend.</strong> Accuracy vs. parameter count (1&nbsp;B → 110&nbsp;B).</figcaption>
       </figure>
 
-<!-- Result Summary Section -->
-<section style="margin-top: 3rem;">
-  <h3 class="title is-4 has-text-centered">Result Summary</h3>
-  <div class="columns is-multiline is-centered equal-height-columns">
+<!-- Result Summary -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">📌 Result Summary</h2>
+    <div class="columns is-multiline is-centered equal-height-columns" style="margin-top: 2rem;">
 
-    <div class="column is-half">
-      <div class="box gradient-box solid-style" style="background:#fceabb;">
-        <p><strong>Congruency Effect</strong><br>
-        >95% models show conflict interference.<br>
-        Stroop: t = 8.99, p < 10⁻¹⁴<br>
-        Flanker-L: t = 17.88, p < 10⁻³³<br>
-        Flanker-N: t = 16.85, p < 10⁻³¹</p>
+      <div class="column is-half">
+        <div class="box gradient-box" style="background:linear-gradient(135deg,#d4eaff,#edf4ff);">
+          <p class="title-inside">Congruency Effect</p>
+          <p class="box-body-text">
+            >95% models show conflict interference.<br>
+            Stroop: t = 8.99, p &lt; 10⁻¹⁴<br>
+            Flanker-L: t = 17.88, p &lt; 10⁻³³<br>
+            Flanker-N: t = 16.85, p &lt; 10⁻³¹
+          </p>
+        </div>
       </div>
-    </div>
 
-    <div class="column is-half">
-      <div class="box gradient-box solid-style" style="background:#d5f4e6;">
-        <p><strong>Squared Conflict</strong><br>
-        Fully-incongruent (SIRC) trials show largest drop. All p < 0.001</p>
+      <div class="column is-half">
+        <div class="box gradient-box" style="background:linear-gradient(135deg,#ffe9ec,#fff6f7);">
+          <p class="title-inside">Squared Conflict</p>
+          <p class="box-body-text">
+            Fully-incongruent (SIRC) trials show largest drop.<br>
+            All p &lt; 0.001
+          </p>
+        </div>
       </div>
-    </div>
 
-    <div class="column is-half">
-      <div class="box gradient-box solid-style" style="background:#e2f0cb;">
-        <p><strong>Control Accuracy</strong><br>
-        Accuracy ≈ 85% on 238 control trials (OCR, color, spatial).</p>
+      <div class="column is-half">
+        <div class="box gradient-box" style="background:linear-gradient(135deg,#f2fbdc,#fafff0);">
+          <p class="title-inside">Control Accuracy</p>
+          <p class="box-body-text">
+            Accuracy ≈ 85% on 238 control trials<br>
+            (OCR, color, spatial tasks).
+          </p>
+        </div>
       </div>
-    </div>
 
-    <div class="column is-half">
-      <div class="box gradient-box solid-style" style="background:#fcd5ce;">
-        <p><strong>Task Concordance</strong><br>
-        r = 0.96 between Letter-/Number-Flanker → shared bottleneck</p>
+      <div class="column is-half">
+        <div class="box gradient-box" style="background:linear-gradient(135deg,#f0e8ff,#faf5ff);">
+          <p class="title-inside">Task Concordance</p>
+          <p class="box-body-text">
+            r = 0.96 between Letter-/Number-Flanker<br>
+            → shared bottleneck
+          </p>
+        </div>
       </div>
-    </div>
 
+    </div>
   </div>
 </section>
 
