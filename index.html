@@ -123,6 +123,20 @@
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
   }
 
+  .gradient-box .title-inside {
+    margin-top: 0;
+    margin-bottom: 0.2rem;
+    font-weight: 600;
+    font-size: 1.15rem;
+    line-height: 1.2;
+  }
+
+  .gradient-box .box-body-text {
+    margin-top: 0.4rem;
+    line-height: 1.5;
+    font-size: 0.98rem;
+  }
+
   /* Equal height columns for summary cards */
   .equal-height-columns {
     display: flex;
@@ -199,6 +213,7 @@
     text-decoration: none;
   }
 </style>
+
 
 
 <!-- Sticky Nav -->
@@ -428,16 +443,17 @@
         <figcaption><strong>Scaling Trend.</strong> Accuracy vs. parameter count (1&nbsp;B → 110&nbsp;B).</figcaption>
       </figure>
 
-<!-- Result Summary Cards -->
-<section class="section" style="padding-top: 3rem;">
+<!-- Result Summary -->
+<section class="section">
   <div class="container is-max-desktop">
-    <h3 class="title is-4 has-text-centered" style="margin-bottom: 2rem;">📐 Result Summary</h3>
-    <div class="columns is-multiline is-centered equal-height-columns">
+    <h2 class="title is-3 has-text-centered">📌 Result Summary</h2>
+    <div class="columns is-multiline is-centered equal-height-columns" style="margin-top: 2rem;">
 
       <div class="column is-half">
-        <div class="box gradient-box" style="background:linear-gradient(135deg,#e0f7fa,#b2ebf2);">
-          <h4 class="title is-5" style="min-height: 3rem;">🎯 Congruency Effect</h4>
-          <p>&gt;95% models show conflict interference.<br>
+        <div class="box gradient-box" style="background:linear-gradient(135deg,#d4eaff,#edf4ff);">
+          <p class="title-inside">Congruency Effect</p>
+          <p class="box-body-text">
+            >95% models show conflict interference.<br>
             Stroop: t = 8.99, p &lt; 10⁻¹⁴<br>
             Flanker-L: t = 17.88, p &lt; 10⁻³³<br>
             Flanker-N: t = 16.85, p &lt; 10⁻³¹
@@ -446,33 +462,38 @@
       </div>
 
       <div class="column is-half">
-        <div class="box gradient-box" style="background:linear-gradient(135deg,#fceabb,#f8b500);">
-          <h4 class="title is-5" style="min-height: 3rem;">🧱 Squared Conflict</h4>
-          <p>Fully-incongruent (SIRC) trials show largest drop.<br>All p &lt; 0.001</p>
+        <div class="box gradient-box" style="background:linear-gradient(135deg,#ffe9ec,#fff6f7);">
+          <p class="title-inside">Squared Conflict</p>
+          <p class="box-body-text">
+            Fully-incongruent (SIRC) trials show largest drop.<br>
+            All p &lt; 0.001
+          </p>
         </div>
       </div>
 
       <div class="column is-half">
-        <div class="box gradient-box" style="background:linear-gradient(135deg,#e0c3fc,#8ec5fc);">
-          <h4 class="title is-5" style="min-height: 3rem;">🧪 Control Accuracy</h4>
-          <p>Accuracy ≈ 85% on 238 control trials<br>(OCR, color, spatial).</p>
+        <div class="box gradient-box" style="background:linear-gradient(135deg,#f2fbdc,#fafff0);">
+          <p class="title-inside">Control Accuracy</p>
+          <p class="box-body-text">
+            Accuracy ≈ 85% on 238 control trials<br>
+            (OCR, color, spatial tasks).
+          </p>
         </div>
       </div>
 
       <div class="column is-half">
-        <div class="box gradient-box" style="background:linear-gradient(135deg,#d4fc79,#96e6a1);">
-          <h4 class="title is-5" style="min-height: 3rem;">🔁 Task Concordance</h4>
-          <p>r = 0.96 between Letter-/Number-Flanker<br>→ shared bottleneck</p>
+        <div class="box gradient-box" style="background:linear-gradient(135deg,#f0e8ff,#faf5ff);">
+          <p class="title-inside">Task Concordance</p>
+          <p class="box-body-text">
+            r = 0.96 between Letter-/Number-Flanker<br>
+            → shared bottleneck
+          </p>
         </div>
       </div>
 
     </div>
   </div>
 </section>
-
-
-
-
 
 
   
