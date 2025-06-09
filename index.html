@@ -32,53 +32,161 @@
 
 <!-- —— 样式 —— -->
 <style>
-  :root{
-    --bg-main:#ffffff;
-    --text-main:#1a1a1a;
+  :root {
+    --bg-main: #ffffff;
+    --text-main: #1a1a1a;
   }
-  [data-theme="dark"]{
-    --bg-main:#181818;
-    --text-main:#e5e5e5;
-  }
-  html{scroll-behavior:smooth}
-  body{background:var(--bg-main);color:var(--text-main);font-family:"Noto Sans",sans-serif}
 
-  /* 原有样式 */
-  .navbar{position:sticky;top:0;z-index:20;background:var(--bg-main);box-shadow:0 2px 4px rgba(0,0,0,.06)}
-  .hero-body{padding:3rem 1.5rem}
-  .title.is-1{font-size:2.5rem!important} @media(min-width:1024px){.title.is-1{font-size:3rem!important}}
-  @media(min-width:1440px){.title.is-1{font-size:3.5rem!important}}
+  [data-theme="dark"] {
+    --bg-main: #181818;
+    --text-main: #e5e5e5;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--bg-main);
+    color: var(--text-main);
+    font-family: "Noto Sans", sans-serif;
+  }
+
+  /* 导航栏 */
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: var(--bg-main);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .06);
+  }
+
+  /* 标题大小响应式 */
+  .hero-body {
+    padding: 3rem 1.5rem;
+  }
+
+  .title.is-1 {
+    font-size: 2.5rem !important;
+  }
+
+  @media (min-width: 1024px) {
+    .title.is-1 {
+      font-size: 3rem !important;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    .title.is-1 {
+      font-size: 3.5rem !important;
+    }
+  }
 
   /* 深色标题白字 */
-  [data-theme="dark"] .title{color:#ffffff!important;}
+  [data-theme="dark"] .title {
+    color: #ffffff !important;
+  }
 
-  /* 深色下 .hero.is-light 修正 */
-  [data-theme="dark"] .hero.is-light{background:#1e1e1e!important;color:#e5e5e5!important;}
+  [data-theme="dark"] .hero.is-light {
+    background: #1e1e1e !important;
+    color: #e5e5e5 !important;
+  }
 
-  /* ★ NEW 深色下 所有 strong/figcaption 的文字颜色 */
+  /* strong 和 figcaption 的深色优化 */
   [data-theme="dark"] p strong,
   [data-theme="dark"] li strong,
-  [data-theme="dark"] figcaption strong{color:#ffffff!important;}
-  [data-theme="dark"] figcaption{color:#dcdcdc!important;}
+  [data-theme="dark"] figcaption strong {
+    color: #ffffff !important;
+  }
 
-  /* Key Findings 渐变卡片 */
-  .gradient-box{position:relative;color:#f5f5f5!important;text-shadow:0 1px 3px rgba(0,0,0,.4)}
-  .gradient-box::before{content:"";position:absolute;inset:0;border-radius:inherit;
-    background:rgba(0,0,0,.15);mix-blend-mode:multiply;pointer-events:none}
+  [data-theme="dark"] figcaption {
+    color: #dcdcdc !important;
+  }
+
+  /* ✅ 渐变卡片统一样式（Key Findings） */
+  .gradient-box {
+    position: relative;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+  }
+
+  .gradient-box::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: rgba(0, 0, 0, .12);
+    mix-blend-mode: multiply;
+    pointer-events: none;
+  }
+
+  /* ✅ 卡片高度一致设置 */
+  .equal-height-columns {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .equal-height-columns .column {
+    display: flex;
+  }
+
+  .equal-height-columns .box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 240px;
+  }
+
+  /* ✅ 深色模式下的卡片文字可读性 */
+  [data-theme="dark"] .gradient-box {
+    color: #ffffff !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  }
 
   /* Design 段落 <u> 去下划线 */
-  #design u{text-decoration:none;}
+  #design u {
+    text-decoration: none;
+  }
 
   /* 图像美化 */
-  .carousel img,figure img{border-radius:8px;box-shadow:0 4px 8px rgba(0,0,0,.08)}
-  .box{border-radius:6px;box-shadow:0 2px 6px rgba(0,0,0,.05)}
-  figure figcaption{margin-top:6px;font-size:.8rem;color:#666;text-align:center}
+  .carousel img,
+  figure img {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .08);
+  }
+
+  .box {
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .05);
+  }
+
+  figure figcaption {
+    margin-top: 6px;
+    font-size: .8rem;
+    color: #666;
+    text-align: center;
+  }
 
   /* BibTeX copy */
-  .copy-btn{position:absolute;top:8px;right:8px;border:none;background:#3273dc;color:#fff;
-    border-radius:4px;font-size:.8rem;padding:4px 8px;cursor:pointer}
+  .copy-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    border: none;
+    background: #3273dc;
+    color: #fff;
+    border-radius: 4px;
+    font-size: .8rem;
+    padding: 4px 8px;
+    cursor: pointer;
+  }
 
-  /* —— 新增代码：深色模式下页脚背景和链接颜色修正 —— */
+  /* 页脚（深色） */
   [data-theme="dark"] .footer {
     background-color: #181818 !important;
     color: #e5e5e5 !important;
@@ -88,8 +196,7 @@
     color: #a0c8ff !important;
   }
 </style>
-</head>
-<body>
+
 
 <!-- Sticky Nav -->
 <nav class="navbar" role="navigation">
@@ -164,45 +271,37 @@
 </section>
 
 <!-- Key Findings -->
+<!-- Key Findings -->
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container is-max-desktop">
-      <h2 class="title is-3 has-text-centered">🔑 Key Findings</h2>
+      <h2 class="title is-3 has-text-centered" style="margin-top:2rem;">🔍 Key Findings</h2>
 
-      <div class="columns is-multiline is-centered">
-
-        <!-- Card 1 -->
+      <div class="columns is-multiline equal-height-columns is-centered">
         <div class="column is-half">
-          <div class="box gradient-box" style="background:linear-gradient(135deg,#667eea,#764ba2); color:white">
-            <p><strong>🎯 Emergent Congruency</strong><br>
-            All models reproduce the classic congruency effect, indicating interference resolution emerges from multimodal pre-training.</p>
+          <div class="box gradient-box" style="background:linear-gradient(135deg,#b3cde0 0%,#ccebc5 100%);">
+            <h3 class="title is-4"><i class="fas fa-sliders-h"></i> Emergent Congruency</h3>
+            <p>All models reproduce the classic congruency effect, indicating interference resolution emerges from multimodal pre-training.</p>
           </div>
         </div>
-
-        <!-- Card 2 -->
         <div class="column is-half">
-          <div class="box gradient-box" style="background:linear-gradient(135deg,#f7971e,#ffd200); color:black">
-            <p><strong>📐 Hierarchical Interference</strong><br>
-            Squared tasks introduce nested conflicts still unsolved by top-tier systems.</p>
+          <div class="box gradient-box" style="background:linear-gradient(135deg,#decbe4 0%,#fed9a6 100%);">
+            <h3 class="title is-4"><i class="fas fa-layer-group"></i> Hierarchical Interference</h3>
+            <p>Squared tasks introduce nested conflicts still unsolved by top-tier systems.</p>
           </div>
         </div>
-
-        <!-- Card 3 -->
         <div class="column is-half">
-          <div class="box gradient-box" style="background:linear-gradient(135deg,#43cea2,#185a9d); color:white">
-            <p><strong>📈 Scaling Trend</strong><br>
-            Performance rises roughly log-linearly from 1 B → 110 B parameters, paralleling human processing-time curves.</p>
+          <div class="box gradient-box" style="background:linear-gradient(135deg,#ffffcc 0%,#ccebc5 100%);">
+            <h3 class="title is-4"><i class="fas fa-chart-line"></i> Scaling Trend</h3>
+            <p>Performance rises <strong>roughly log-linearly</strong> from 1 B → 110 B parameters, paralleling human processing-time curves.</p>
           </div>
         </div>
-
-        <!-- Card 4 -->
         <div class="column is-half">
-          <div class="box gradient-box" style="background:linear-gradient(135deg,#ff758c,#ff7eb3); color:white">
-            <p><strong>🔁 Convergent Validity</strong><br>
-            Letter- and Number-Flanker scores strongly covary, confirming a unified control construct.</p>
+          <div class="box gradient-box" style="background:linear-gradient(135deg,#fbb4ae 0%,#fddaec 100%);">
+            <h3 class="title is-4"><i class="fas fa-check-double"></i> Convergent Validity</h3>
+            <p>Letter- and Number-Flanker scores strongly covary, confirming a unified control construct.</p>
           </div>
         </div>
-
       </div>
     </div>
   </div>
